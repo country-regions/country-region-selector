@@ -336,7 +336,6 @@
 		}
 	}
 
-
 	// when the page has loaded, run our init function
 	_contentLoaded(window, _init);
 

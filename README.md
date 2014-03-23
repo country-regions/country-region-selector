@@ -1,36 +1,36 @@
 ## country-region-dropdowns
 
-A common thing you often see in forms is a country dropdown which populates a second region field when a country is
-selected. It's super easy to do this, but requires a lot of leg work tracking down the data and rigging it all up
-in your form. So this script does exactly that - and gives you a few options to cover the most likely scenarios you
-may need to handle.
+A common thing you often see in forms is a country dropdown which changes the contents of a second region field
+when a country is selected. It's super easy to do this, but requires a lot of leg work tracking down the data and
+rigging it all up in your form. This script let's you set that all up automatically without having to run any custom
+javascript.
 
-The script comes in two versions:
+The script comes in two flavours:
 - standalone script (no dependencies, just plain JS) - **10KB**
 - a jQuery-dependent version (slightly smaller) - **8KB**
 
 
 ### Features
 
-- Lets you define an optional "please select" field for each (with whatever language you want).
+- Lets you customize the default "Please select" field for each country/region with whatever language you want.
 - Lets you specify a default value for each field.
-- Lets you customize the appearance and value of the country field ("Canada" or "CA").
-- Lets you have as many country-region fields as you need in your page.
-- The standalone version has no dependencies on other any libs (jQuery etc).
+- Lets you customize the appearance and value of the country field ("Canada" or "CA") - they can be different, if desired
+(e.g. 2 char code for saving to database; full name for displaying purposes).
+- Lets you have as many country-region-mapped fields as you need in your page.
+- The standalone version has no dependencies on other any libs (jQuery etc) and you can include the JS file anywhere you want
+(head/foot).
 
 
 ### Example
 
 Here's an example page that shows a few different ways it can be used.
 
-- Example page
-
 
 ### How to Use
 
 It's very easy.
 
-1. Include the `country-region-selector.min.js' file in your webpage.
+1. Include the `country-region-selector.min.js` file in your webpage.
 2. Add two `<select>` fields in the appropriate locations in your form.
 3. Give the country field a class of `crs-country`.
 4. Give the region field a class of `crs-country`.
