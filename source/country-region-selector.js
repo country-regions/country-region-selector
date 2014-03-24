@@ -1,6 +1,9 @@
 (function() {
 	"use strict";
 
+	var _countryClass = "crs-country";
+	var _regionClass = "crs-region";
+
 	var _data = [
 		{ c: "Afghanistan", cs: "AF", cl: "Badakhshan|Badghis|Baghlan|Balkh|Bamian|Farah|Faryab|Ghazni|Ghowr|Helmand|Herat|Jowzjan|Kabol|Kandahar|Kapisa|Konar|Kondoz|Laghman|Lowgar|Nangarhar|Nimruz|Oruzgan|Paktia|Paktika|Parvan|Samangan|Sar-e Pol|Takhar|Vardak|Zabol" },
 		{ c: "Albania", cs: "AL", cl: "Berat|Bulqize|Delvine|Devoll (Bilisht)|Diber (Peshkopi)|Durres|Elbasan|Fier|Gjirokaster|Gramsh|Has (Krume)|Kavaje|Kolonje (Erseke)|Korce|Kruje|Kucove|Kukes|Kurbin|Lezhe|Librazhd|Lushnje|Malesi e Madhe (Koplik)|Mallakaster (Ballsh)|Mat (Burrel)|Mirdite (Rreshen)|Peqin|Permet|Pogradec|Puke|Sarande|Shkoder|Skrapar (Corovode)|Tepelene|Tirane (Tirana)|Tirane (Tirana)|Tropoje (Bajram Curri)|Vlore" },
@@ -249,29 +252,43 @@
 		for (var i=0; i<countryDropdowns.length; i++) {
 			_populateCountryFields(countryDropdowns[i]);
 		}
-
 	};
 
 
 	var _populateCountryFields = function(countryElement) {
 		countryElement.length = 0;
-//		countryElement.options[0] = new Option('Select Country', '');
-//		countryElement.selectedIndex = 0;
+
+		var customOptionStr = countryElement.getAttribute("data-default-option");
+		var defaultOptionStr = customOptionStr ? customOptionStr : "Select Country";
+
+		countryElement.options[0] = new Option(defaultOptionStr, '');
+		countryElement.selectedIndex = 0;
 		for (var i=0; i<_data.length; i++) {
 			countryElement.options[countryElement.length] = new Option(_data[i].c, _data[i].c);
 		}
 
-		// Assigned all countries. Now assign event listener for the states.
+		var regionID = countryElement.getAttribute("data-region-id");
+		if (regionID) {
+			var regionField = document.getElementById(regionID);
+			if (regionField) {
+				_initRegionField(regionField);
+				countryElement.onchange = function() {
+					_populateRegionFields(countryElement, regionField);
+				};
+			} else {
+				console.error("Region dropdown DOM node with ID " + regionID + " not found.");
+			}
+		}
+	};
 
-//		if (stateElementId) {
-//			countryElement.onchange = function(){
-//				populateStates( countryElementId, stateElementId );
-//			};
-//		}
-	}
+	var _initRegionField = function(el) {
+		var customOptionStr = el.getAttribute("data-default-option");
+		var defaultOptionStr = customOptionStr ? customOptionStr : "-";
+		el.options[0] = new Option(defaultOptionStr, '');
+		el.selectedIndex = 0;
+	};
 
-
-	var _populateRegionFields = function(stateElementId) {
+	var _populateRegionFields = function(countryElement, stateElementId) {
 //		var selectedCountryIndex = document.getElementById( countryElementId ).selectedIndex;
 //		var stateElement = document.getElementById( stateElementId );
 //
@@ -284,8 +301,7 @@
 //		for (var i=0; i<state_arr.length; i++) {
 //			stateElement.options[stateElement.length] = new Option(state_arr[i],state_arr[i]);
 //		}
-	}
-
+	};
 
 	/*!
 	 * contentloaded.js

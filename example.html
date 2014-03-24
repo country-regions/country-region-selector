@@ -3,13 +3,30 @@
 <head>
 	<title></title>
 </head>
+<body>
 
-<h1>Example 1</h1>
+    <h1>Example 1</h1>
 
-<select class="crs-country" data-crs-id=""></select>
-<select class="crs-region"></select>
+    <p>
+        This is a simple no-frills example.
+    </p>
 
-<hr size="1" />
+    <select class="crs-country" data-region-id="one"></select>
+    <select class="crs-region" id="one"></select>
 
-<script src="source/country-region-selector.js"></script>
+    <hr size="1" />
+
+    <h1>Example 2</h1>
+
+    <p>
+        Custom default option texts for both the country and region dropdowns.
+    </p>
+
+    <select class="crs-country" data-region-id="two" data-default-option="Select a country, man!"></select>
+    <select class="crs-region" id="two"></select>
+
+    <hr size="1" />
+
+    <script src="source/country-region-selector.js"></script>
+</body>
 </html>
