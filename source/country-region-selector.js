@@ -2,7 +2,9 @@
 	"use strict";
 
 	var _countryClass = "crs-country";
-	var _regionClass = "crs-region";
+	var _defaultCountryStr = "Select country";
+	var _defaultRegionStr = "Select region";
+
 
 	var _data = [
 		{ c: "Afghanistan", cs: "AF", cl: "Badakhshan|Badghis|Baghlan|Balkh|Bamian|Farah|Faryab|Ghazni|Ghowr|Helmand|Herat|Jowzjan|Kabol|Kandahar|Kapisa|Konar|Kondoz|Laghman|Lowgar|Nangarhar|Nimruz|Oruzgan|Paktia|Paktika|Parvan|Samangan|Sar-e Pol|Takhar|Vardak|Zabol" },
@@ -247,8 +249,7 @@
 
 
 	var _init = function() {
-		var countryDropdowns = document.getElementsByClassName("crs-country");
-
+		var countryDropdowns = document.getElementsByClassName(_countryClass);
 		for (var i=0; i<countryDropdowns.length; i++) {
 			_populateCountryFields(countryDropdowns[i]);
 		}
@@ -259,21 +260,24 @@
 		countryElement.length = 0;
 
 		var customOptionStr = countryElement.getAttribute("data-default-option");
-		var defaultOptionStr = customOptionStr ? customOptionStr : "Select Country";
+		var defaultOptionStr = customOptionStr ? customOptionStr : _defaultCountryStr;
+
+		var customValue = countryElement.getAttribute("data-value");
 
 		countryElement.options[0] = new Option(defaultOptionStr, '');
 		countryElement.selectedIndex = 0;
 		for (var i=0; i<_data.length; i++) {
-			countryElement.options[countryElement.length] = new Option(_data[i].c, _data[i].c);
+			var val = (customValue === "2-char") ? _data[i].cs : _data[i].c;
+			countryElement.options[countryElement.length] = new Option(_data[i].c, val);
 		}
 
 		var regionID = countryElement.getAttribute("data-region-id");
 		if (regionID) {
-			var regionField = document.getElementById(regionID);
-			if (regionField) {
-				_initRegionField(regionField);
+			var regionElement = document.getElementById(regionID);
+			if (regionElement) {
+				_initRegionField(regionElement);
 				countryElement.onchange = function() {
-					_populateRegionFields(countryElement, regionField);
+					_populateRegionFields(countryElement, regionElement);
 				};
 			} else {
 				console.error("Region dropdown DOM node with ID " + regionID + " not found.");
@@ -282,26 +286,33 @@
 	};
 
 	var _initRegionField = function(el) {
-		var customOptionStr = el.getAttribute("data-default-option");
+		var customOptionStr = el.getAttribute("data-blank-option");
 		var defaultOptionStr = customOptionStr ? customOptionStr : "-";
-		el.options[0] = new Option(defaultOptionStr, '');
+		el.length = 0;
+		el.options[0] = new Option(defaultOptionStr, "");
 		el.selectedIndex = 0;
 	};
 
-	var _populateRegionFields = function(countryElement, stateElementId) {
-//		var selectedCountryIndex = document.getElementById( countryElementId ).selectedIndex;
-//		var stateElement = document.getElementById( stateElementId );
-//
-//		stateElement.length=0;	// Fixed by Julian Woods
-//		stateElement.options[0] = new Option('Select State','');
-//		stateElement.selectedIndex = 0;
-//
-//		var state_arr = s_a[selectedCountryIndex].split("|");
-//
-//		for (var i=0; i<state_arr.length; i++) {
-//			stateElement.options[stateElement.length] = new Option(state_arr[i],state_arr[i]);
-//		}
+	var _populateRegionFields = function(countryElement, regionElement) {
+		var selectedCountryIndex = countryElement.selectedIndex;
+
+		var customOptionStr = regionElement.getAttribute("data-default-option");
+		var defaultOptionStr = customOptionStr ? customOptionStr : _defaultRegionStr;
+
+		if (countryElement.value === "") {
+			_initRegionField(regionElement);
+		} else {
+			regionElement.length = 0;
+			regionElement.options[0] = new Option(defaultOptionStr, '');
+			regionElement.selectedIndex = 0;
+
+			var regions = _data[selectedCountryIndex].cl.split("|");
+			for (var i=0; i<regions.length; i++) {
+				regionElement.options[regionElement.length] = new Option(regions[i], regions[i]);
+			}
+		}
 	};
+
 
 	/*!
 	 * contentloaded.js

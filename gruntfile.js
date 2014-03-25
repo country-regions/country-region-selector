@@ -6,7 +6,17 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 
 	var config = {
-
+		uglify: {
+			standalone: {
+				files: {
+					'source/country-region-selector.min.js': 'source/country-region-selector.js'
+				},
+				options: {
+					report: "min",
+					compress: true
+				}
+			}
+		}
 	};
 
 	grunt.initConfig(config);

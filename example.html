@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 <head>
-	<title></title>
+	<title>country-region-dropdowns example</title>
 </head>
 <body>
 
@@ -12,21 +12,36 @@
     </p>
 
     <select class="crs-country" data-region-id="one"></select>
-    <select class="crs-region" id="one"></select>
+    <select id="one"></select>
 
     <hr size="1" />
+
 
     <h1>Example 2</h1>
 
-    <p>
-        Custom default option texts for both the country and region dropdowns.
+	<p>
+		Custom default option texts for both the country and region dropdowns.
     </p>
 
-    <select class="crs-country" data-region-id="two" data-default-option="Select a country, man!"></select>
-    <select class="crs-region" id="two"></select>
+    <select class="crs-country" data-region-id="two" data-default-option="Select a country, man."></select>
+    <select id="two" data-blank-option="No country selected, mon. (blank value)" data-default-option="Select a region, pal. (default option)"></select>
 
-    <hr size="1" />
+	<hr size="1" />
 
-    <script src="source/country-region-selector.js"></script>
+
+	<h1>Example 3</h1>
+
+	<p>
+		The country dropdown values are by default the same as the display values: the full country names.
+		By adding the <b>data-value="2-char"</b> attribute to the country field, the values will be a 2-char
+		character code.
+	</p>
+
+	<select class="crs-country" data-region-id="three" data-value="2-char"></select>
+	<select id="three" data-default-option=""></select>
+
+	<hr size="1" />
+
+	<script src="source/country-region-selector.js"></script>
 </body>
 </html>

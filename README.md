@@ -54,6 +54,22 @@ If your form is used for people returning to it (e.g. "Edit Contact Info" or wha
 region fields to be prefilled with the appropriate value on page load. To do that, just add a `data-default=""` attribute
 to each element containing the country / region value last saved.
 
+### List of data-* attributes
+
+This lists all the available data-* attributes that you can add to the country/region fields to customize the appearance
+and behaviour.
+
+##### country fields
+
+- `data-region-id` - required. This should contain the ID of the region field that it's being mapped to.
+- `data-default-option` - optional. Default: "Select country". This determines the default, blank option display value.
+
+##### region fields
+- `data-blank-option` - before the user selects a country, there's a single <option> displayed which by default is the
+"-" character.
+- `data-default-option` - optional. Default: "Select region". This determines the default, blank option display value
+that shows up after a user has selected a country.
+
 
 ### Notes for Developers
 
