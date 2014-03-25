@@ -1,4 +1,4 @@
-## country-region-dropdowns
+## Country-Region-Selector (CRS)
 
 A common thing you often see in forms is a country dropdown which changes the contents of a second region field
 when a country is selected. It's super easy to do this, but requires a lot of leg work tracking down the data and
@@ -6,8 +6,10 @@ rigging it all up in your form. This script let's you set that all up automatica
 javascript.
 
 The script comes in two flavours:
-- standalone script (no dependencies, just plain JS) - **10KB**
-- a jQuery-dependent version (slightly smaller) - **8KB**
+- standalone script (no dependencies, just plain JS) - **54KB** (minified version)
+- a jQuery-dependent version (ever-so slightly smaller) - **53KB** (minified version)
+
+The reason the files are so large is that they contain all the country and region strings.
 
 
 ### Features
@@ -23,14 +25,14 @@ The script comes in two flavours:
 
 ### Example
 
-Here's an example page that shows a few different ways it can be used.
+Check out the example.html page for an example of the various ways it can be configured and used.
 
 
 ### How to Use
 
 It's very easy.
 
-1. Include the `country-region-selector.min.js` file in your webpage.
+1. Include the `crs.min.js` file in your webpage.
 2. Add two `<select>` fields in the appropriate locations in your form.
 3. Give the country field a class of `crs-country`.
 4. Give the region field a class of `crs-country`.
@@ -51,8 +53,10 @@ it, just add the following CSS: `.yourField { width: 100px; }`
 #### Adding default values for each field
 
 If your form is used for people returning to it (e.g. "Edit Contact Info" or whatever), you'll need the country and
-region fields to be prefilled with the appropriate value on page load. To do that, just add a `data-default=""` attribute
-to each element containing the country / region value last saved.
+region fields to be prefilled with the appropriate value on page load. To do that, just add a `data-default-value=""` attribute
+to each element containing the country / region value last saved. Note: the region value will only ever be populated if the
+country field is as well.
+
 
 ### List of data-* attributes
 
@@ -63,12 +67,14 @@ and behaviour.
 
 - `data-region-id` - required. This should contain the ID of the region field that it's being mapped to.
 - `data-default-option` - optional. Default: "Select country". This determines the default, blank option display value.
+- `data-default-value` - optional. The default selected value in the country dropdown (e.g. "Canada")
 
 ##### region fields
 - `data-blank-option` - before the user selects a country, there's a single <option> displayed which by default is the
 "-" character.
 - `data-default-option` - optional. Default: "Select region". This determines the default, blank option display value
 that shows up after a user has selected a country.
+- `data-default-value` - optional. The default selected value in the region dropdown (e.g. "British Columbis")
 
 
 ### Notes for Developers
@@ -82,7 +88,7 @@ familiar with Grunt, here's how you'd do that.
 3. In the command line, navigate to
 4. Type `npm install` to download all necessary require
 5. Type `npm install -g grunt-cli` to install the Grunt command line tool to run properly.
-6. Type `grunt generate`.
+6. Type `grunt`
 
 
 ### License

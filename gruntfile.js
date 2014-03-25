@@ -2,14 +2,14 @@ module.exports = function(grunt) {
 	"use strict";
 
 	// load what we need
-	grunt.loadNpmTasks('grunt-template');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 
 	var config = {
 		uglify: {
 			standalone: {
 				files: {
-					'source/country-region-selector.min.js': 'source/country-region-selector.js'
+					'source/crs.min.js': 'source/crs.js',
+					'source/jquery.crs.min.js': 'source/jquery.crs.js'
 				},
 				options: {
 					report: "min",
