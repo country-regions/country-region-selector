@@ -25,7 +25,8 @@ The reason the files are so large is that they contain all the country and regio
 
 ### Example
 
-Check out the example.html page for an example of the various ways it can be configured and used.
+Check out the following page for an example of the various ways it can be configured and used.
+[http://benkeen.github.io/country-region-selector/](http://benkeen.github.io/country-region-selector/)
 
 
 ### How to Use
