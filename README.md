@@ -1,13 +1,13 @@
 ## Country-Region-Selector (CRS)
 
-A common thing you often see in forms is a country dropdown which changes the contents of a second region field
-when a country is selected. It's super easy to do this, but requires a lot of leg work tracking down the data and
-rigging it all up in your form. This script let's you set that all up automatically without having to run any custom
-javascript.
+A common form feature is dynamic, connected country and region dropdowns, where the region field is updated to contain
+whatever regions (provinces / states / territories / counties etc.) are appropriate for the selected country. It's super
+easy to do this, but requires a lot of leg work tracking down the data and hooking it all up. This script lets you easily
+add this feature to your form without having to write any code.
 
-The script comes in two flavours:
-- standalone script (no dependencies, just plain JS) - **54KB** (minified version)
-- a jQuery-dependent version (ever-so slightly smaller) - **53KB** (minified version)
+It comes in two flavours:
+- [standalone script](./source/crs.min.js) (no dependencies, just plain JS) - **54KB** (minified version)
+- a [jQuery-dependent version](./source/crs.min.js) (ever-so slightly smaller) - **53KB** (minified version)
 
 The reason the files are so large is that they contain all the country and region strings.
 
