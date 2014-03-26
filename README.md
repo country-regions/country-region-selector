@@ -38,7 +38,7 @@ It's very easy.
 3. Give the country field a class of `crs-country`.
 4. Now we need to map each country field to its corresponding region field so the script knows what to update when
 a country is selected. Add an attribute to the country dropdown: `data-region-id="ABC"` where ABC is any string. Now
-Give the region dropdown a **id** of "ABC".
+Give the region dropdown an **id** of "ABC".
 5. That's it! You're done.
 
 But here's a few more tips for further configuration.
@@ -79,17 +79,18 @@ that shows up after a user has selected a country.
 
 ### Notes for Developers
 
-If you want to edit the source code, go right ahead (pull requests welcome, of course!). The unminified source code
+If you want to edit the source code, go right ahead (pull requests welcome, of course!). The unminified source
 is found in the `/source` folder. To re-generate the minified version, just run the Grunt task. In case you're not
-familiar with Grunt, here's how you'd do that.
+familiar with Grunt, here's how you get that hooked up.
 
-1. Install node on your computer.
+1. Install [Node](http://nodejs.org) on your computer.
 2. Clone this repository to your local computer.
-3. In the command line, navigate to
-4. Type `npm install` to download all necessary require
+3. In the command line, navigate to to the root of the cloned repo (i.e. the folder with this README file in it).
+4. Type `npm install` to download all necessary require modules.
 5. Type `npm install -g grunt-cli` to install the Grunt command line tool to run properly.
 6. Type `grunt`
 
+That will then re-generate the minified files in your ./source folder.
 
 ### License
 
