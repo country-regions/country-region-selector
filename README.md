@@ -11,7 +11,6 @@ It comes in two flavours:
 
 The reason the files are so large is that they contain all the country and region strings.
 
-
 ### Features
 
 - Lets you customize the default "Please select" field for each country/region with whatever language you want.
@@ -91,6 +90,12 @@ familiar with Grunt, here's how you get that hooked up.
 6. Type `grunt`
 
 That will then re-generate the minified files in your ./source folder.
+
+### Next version...
+
+I'm not happy with the data source for this plugin. For the next version I'm going to be moving the data source to
+only contain ISO standard countries, and manually verify each region to confirm that it's correct. I noticed a couple
+of oddities when last examining the data set, and I want to ensure they're correct.
 
 ### License
 
