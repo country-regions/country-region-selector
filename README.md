@@ -91,11 +91,10 @@ familiar with Grunt, here's how you get that hooked up.
 
 That will then re-generate the minified files in your ./source folder.
 
-### Next version...
+### Changelog
 
-I'm not happy with the data source for this plugin. For the next version I'm going to be moving the data source to
-only contain ISO standard countries, and manually verify each region to confirm that it's correct. I noticed a couple
-of oddities when last examining the data set, and I want to ensure they're correct.
+- `0.1.1` - April 24, updated country list for ISO 3166 countries and short codes
+- `0.1.0` - March 27, initial version
 
 ### License
 
