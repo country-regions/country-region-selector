@@ -1,6 +1,6 @@
 {
 	"name": "country-region-selector",
-	"version": "0.1.0",
+	"version": "0.1.1",
 	"main": "source/crs.min.js",
 	"license": "MIT",
 	"ignore": [
@@ -13,7 +13,13 @@
 	"devDependencies": { },
 	"keywords": [
 		"country",
+		"countries",
 		"regions",
-		"forms"
+		"states",
+		"provinces",
+		"counties",
+		"forms",
+		"dropdowns",
+		"select boxes"
 	]
 }
