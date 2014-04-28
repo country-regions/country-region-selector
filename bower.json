@@ -8,7 +8,8 @@
 		"*.md",
 		"gruntfile.js",
 		"LICENSE",
-		"package.json"
+		"package.json",
+		"bower.json"
 	],
 	"devDependencies": { },
 	"keywords": [
@@ -18,6 +19,7 @@
 		"states",
 		"provinces",
 		"counties",
+		"territories",
 		"forms",
 		"dropdowns",
 		"select boxes"
