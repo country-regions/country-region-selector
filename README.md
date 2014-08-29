@@ -82,12 +82,12 @@ If you want to edit the source code, go right ahead (pull requests welcome, of c
 is found in the `/source` folder. To re-generate the minified version, just run the Grunt task. In case you're not
 familiar with Grunt, here's how you get that hooked up.
 
-1. Install [Node](http://nodejs.org) on your computer.
+1. Install [Node](http://nodejs.org).
 2. Clone this repository to your local computer.
-3. In the command line, navigate to to the root of the cloned repo (i.e. the folder with this README file in it).
-4. Type `npm install` to download all necessary require modules.
+3. In the command line, navigate to the root of the cloned repo (i.e. the folder with this README file in it).
+4. Type `npm install` to download all the necessary modules.
 5. Type `npm install -g grunt-cli` to install the Grunt command line tool to run properly.
-6. Type `grunt`
+6. In the country-region-selector folder type `grunt` to run the Grunt command.
 
 That will then re-generate the minified files in your ./source folder.
 
