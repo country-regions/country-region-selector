@@ -1,6 +1,6 @@
 {
 	"name": "country-region-selector",
-	"version": "0.1.1",
+	"version": "0.1.2",
 	"main": "source/crs.min.js",
 	"license": "MIT",
 	"ignore": [
