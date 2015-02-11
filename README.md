@@ -1,4 +1,4 @@
-## Country-Region-Selector (CRS)
+## Country-Region-Selector
 
 A common form feature is dynamic, connected country and region dropdowns, where the region field is updated to contain
 whatever regions (provinces / states / territories / counties etc.) are appropriate for the selected country. It's super
@@ -93,8 +93,10 @@ That will then re-generate the minified files in your ./source folder.
 
 ### Changelog
 
-- `0.1.1` - April 24, updated country list for ISO 3166 countries and short codes
-- `0.1.0` - March 27, initial version
+- `0.1.3` - Feb 10, 2015. Updated Ukraine regions.
+- `0.1.2` - Nov 1, 2014. Fix for typo in UK counties list.
+- `0.1.1` - April 24, 2014. Updated country list for ISO 3166 countries and short codes
+- `0.1.0` - March 27, 2014. Initial version
 
 ### License
 
