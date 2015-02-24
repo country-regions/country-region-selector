@@ -12,6 +12,8 @@
 	var _countryClass = "crs-country";
 	var _defaultCountryStr = "Select country";
 	var _defaultRegionStr = "Select region";
+	var _defaultCountryValue = null;
+	var _defaultRegionValue = null;
 
 	// originally an object, but converted to an array to reduce size
 	var _data = [
@@ -274,11 +276,12 @@
 
 	var _populateCountryFields = function() {
 		var countryElement = this;
+		_defaultCountryValue = $(countryElement).val();
 		countryElement.length = 0;
 		var customOptionStr = $(countryElement).attr("data-default-option");
 		var defaultOptionStr = customOptionStr ? customOptionStr : _defaultCountryStr;
 
-		var defaultSelectedValue = $(countryElement).attr("data-default-value");
+		var defaultSelectedValue = _defaultCountryValue ? _defaultCountryValue : $(countryElement).attr("data-default-value");
 		var customValue = $(countryElement).attr("data-value");
 		var foundIndex = 0;
 
@@ -307,7 +310,7 @@
 				if (defaultSelectedValue) {
 					_populateRegionFields(countryElement, regionElement);
 
-					var defaultRegionSelectedValue = $(regionElement).attr("data-default-value");
+					var defaultRegionSelectedValue = _defaultRegionValue ? _defaultRegionValue : $(regionElement).attr("data-default-value");
 					if (defaultRegionSelectedValue !== null) {
 						var data = _data[countryElement.selectedIndex-1][2].split("|");
 						_setDefaultRegionValue(regionElement, data, defaultRegionSelectedValue);
@@ -320,6 +323,7 @@
 	};
 
 	var _initRegionField = function(el) {
+		_defaultRegionValue = $(el).val();
 		var customOptionStr = $(el).attr("data-blank-option");
 		var defaultOptionStr = customOptionStr ? customOptionStr : "-";
 		el.length = 0;
