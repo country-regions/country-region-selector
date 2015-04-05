@@ -1,12 +1,24 @@
 /**
  * country-region-dropdowns
  * ------------------------
- * v0.1.2
+ * v0.1.4
  * @author Ben Keen
  * @url https://github.com/benkeen/country-region-dropdowns
  * @licence MIT
  */
-(function() {
+(function(root, factory) {
+  if (typeof define === 'function' && define.amd) {
+    // AMD. Register as an anonymous module
+    define([], factory);
+  } else if (typeof exports === 'object') {
+    // Node. Does not work with strict CommonJS, but only CommonJS-like environments that support module.exports,
+    // like Node
+    module.exports = factory(require());
+  } else {
+    // browser globals (root is window)
+    root.crs = factory(root);
+  }
+}(this, function() {
 	"use strict";
 
 	var _countryClass = "crs-country";
@@ -359,4 +371,8 @@
 
 	$(_init);
 
-})();
+  return {
+    init: _init
+  };
+
+}));
