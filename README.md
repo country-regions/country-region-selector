@@ -20,6 +20,7 @@ The reason the files are so large is that they contain all the country and regio
 - Lets you have as many country-region-mapped fields as you need in your page.
 - The standalone version has no dependencies on other any libs (jQuery etc) and you can include the JS file anywhere you want
 (head/foot).
+- Works with dynamically inserted DOM content.
 
 
 ### Example
@@ -75,6 +76,29 @@ ISO standard 2-char country codes, but not all. They are, however, unique across
 that shows up after a user has selected a country.
 - `data-default-value` - optional. The default selected value in the region dropdown (e.g. "British Columbis")
 
+### Working with dynamic HTML 
+
+In case your page is being generated on the fly, you'll need to manually re-initialize the script after the new DOM 
+content is inserted. 
+
+##### AMD example
+
+With AMD (requireJS), just include the lib as you usually would. If you inspect the return value, you'll see it has a 
+single `init` function. Just call that method whenever you need it (i.e. after new DOM content is inserted into your
+page).
+
+```javascript
+define(['/path/to/crs.min'], function(crs) {
+    // when you're ready... 
+    crs.init();
+});
+```
+##### Plain vanilla JS example
+
+If you're just including the crs.min.js in a `<script>` tag in your page, it'll automatically expose a `crs` property
+on your global `window` object. Then you can call `window.crs.init()` whenever your new page content has been dynamically
+inserted. That will initialize the newly inserted country-region fields. 
+
 
 ### Notes for Developers
 
@@ -93,6 +117,7 @@ That will then re-generate the minified files in your ./source folder.
 
 ### Changelog
 
+- `0.1.4` - Apr 4, 2015. Lib now wrapped in UMD (accessible with RequireJS, CommonJS, Node); custom init() function exposed
 - `0.1.3` - Feb 10, 2015. Updated Ukraine regions.
 - `0.1.2` - Nov 1, 2014. Fix for typo in UK counties list.
 - `0.1.1` - April 24, 2014. Updated country list for ISO 3166 countries and short codes
