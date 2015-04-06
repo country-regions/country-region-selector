@@ -1,7 +1,7 @@
 /**
  * country-region-dropdowns
  * ------------------------
- * v0.1.4
+ * v0.1.5
  * @author Ben Keen
  * @url https://github.com/benkeen/country-region-dropdowns
  * @licence MIT
@@ -286,7 +286,14 @@
 
 	var _populateCountryFields = function() {
 		var countryElement = this;
-		countryElement.length = 0;
+
+    // ensure the dropdown only gets initialized once
+    var loaded = countryElement.getAttribute("data-crs-loaded");
+    if (loaded === "true") {
+      return;
+    }
+
+    countryElement.length = 0;
 		var customOptionStr = $(countryElement).attr("data-default-option");
 		var defaultOptionStr = customOptionStr ? customOptionStr : _defaultCountryStr;
 
@@ -329,6 +336,8 @@
 				console.error("Region dropdown DOM node with ID " + regionID + " not found.");
 			}
 		}
+
+    countryElement.setAttribute("data-crs-loaded", "true");
 	};
 
 	var _initRegionField = function(el) {
