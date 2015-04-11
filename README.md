@@ -117,6 +117,7 @@ That will then re-generate the minified files in your ./source folder.
 
 ### Changelog
 
+- `0.1.6` - Apr 10, 2015. Russian regions updated by @Konair0s
 - `0.1.5` - Apr 5, 2015. Bug fix.
 - `0.1.4` - Apr 4, 2015. Lib now wrapped in UMD (accessible with RequireJS, CommonJS, Node); custom init() function exposed
 - `0.1.3` - Feb 10, 2015. Updated Ukraine regions.
