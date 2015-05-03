@@ -1,3 +1,8 @@
+// This file is for a future version: it's to support state/prov abbreviations, see:
+//https://github.com/benkeen/country-region-selector/issues/2#issuecomment-98549680
+
+// As an example of how it works, see the Canada country data set
+
 // first line must be comment
 var _data = [
   ["Afghanistan","AF","Badakhshan|Badghis|Baghlan|Balkh|Bamyan|Daykundi|Farah|Faryab|Ghazni|Ghor|Helmand|Herat|Jowzjan|Kabul|Kandahar|Kapisa|Khost|Kunar|Kunduz|Laghman|Logar|Nangarhar|Nimruz|Nurestan|Oruzgan|Paktia|Paktika|Panjshir|Parvan|Samangan|Sare Pol|Takhar|Wardak|Zabul"],
@@ -39,7 +44,7 @@ var _data = [
   ["Burundi","BI","Bubanza|Bujumbura|Bururi|Cankuzo|Cibitoke|Gitega|Karuzi|Kayanza|Kirundo|Makamba|Muramvya|Muyinga|Mwaro|Ngozi|Rutana|Ruyigi"],
   ["Cambodia","KH","Banteay Mean Cheay|Batdambang|Kampong Cham|Kampong Chhnang|Kampong Spoe|Kampong Thum|Kampot|Kandal|Kaoh Kong|Keb|Kracheh|Mondol Kiri|Otdar Mean Cheay|Pailin|Phnum Penh|Pouthisat|Preah Seihanu (Sihanoukville)|Preah Vihear|Prey Veng|Rotanah Kiri|Siem Reab|Stoeng Treng|Svay Rieng|Takev"],
   ["Cameroon","CM","Adamaoua|Centre|Est|Extreme-Nord|Littoral|Nord|Nord-Ouest|Ouest|Sud|Sud-Ouest"],
-  ["Canada","CA","Alberta|British Columbia|Manitoba|New Brunswick|Newfoundland and Labrador|Northwest Territories|Nova Scotia|Nunavut|Ontario|Prince Edward Island|Quebec|Saskatchewan|Yukon"],
+  ["Canada","CA","AB~Alberta|BC~British Columbia|MB~Manitoba|NB~New Brunswick|NL~Newfoundland and Labrador|NT~Northwest Territories|NS~Nova Scotia|NU~Nunavut|ON~Ontario|PE~Prince Edward Island|QC~Quebec|SK~Saskatchewan|YT~Yukon"],
   ["Cape Verde","CV","Boa Vista|Brava|Maio|Mosteiros|Paul|Porto Novo|Praia|Ribeira Grande|Sal|Santa Catarina|Santa Cruz|Sao Domingos|Sao Filipe|Sao Nicolau|Sao Vicente|Tarrafal"],
   ["Cayman Islands","KY","Creek|Eastern|Midland|South Town|Spot Bay|Stake Bay|West End|Western"],
   ["Central African Republic","CF","Bamingui-Bangoran|Bangui|Basse-Kotto|Gribingui|Haut-Mbomou|Haute-Kotto|Haute-Sangha|Kemo-Gribingui|Lobaye|Mbomou|Nana-Mambere|Ombella-Mpoko|Ouaka|Ouham|Ouham-Pende|Sangha|Vakaga"],
