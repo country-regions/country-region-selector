@@ -165,7 +165,7 @@ var _data = [
   ["Niue","NU","Niue"],
   ["Norfolk Island","NF","Norfolk Island"],
   ["Northern Mariana Islands","MP","Northern Islands|Rota|Saipan|Tinian"],
-  ["Norway","NO","Akershus|Aust-Agder|Buskerud|Finnmark|Hedmark|Hordaland|More og Romsdal|Nord-Trondelag|Nordland|Oppland|Oslo|Ostfold|Rogaland|Sogn og Fjordane|Sor-Trondelag|Telemark|Troms|Vest-Agder|Vestfold"],
+  ["Norway","NO","Akershus|Aust-Agder|Buskerud|Finnmark|Hedmark|Hordaland|More og Romsdal|Nord-Trondelag|Nordland|Oppland|Oslo|Ostfold|Rogaland|Sogn og Fjordane|Sor-Trondelag|Telemark|Troms|Vest-Agder|Vestfold|Jan Mayen|Svalbard"],
   ["Oman","OM","Ad Dakhiliyah|Al Batinah|Al Wusta|Ash Sharqiyah|Az Zahirah|Masqat|Musandam|Zufar"],
   ["Pakistan","PK","Balochistan|Federally Administered Tribal Areas|Islamabad Capital Territory|North-West Frontier Province|Punjab|Sindh"],
   ["Palau","PW","Aimeliik|Airai|Angaur|Hatobohei|Kayangel|Koror|Melekeok|Ngaraard|Ngarchelong|Ngardmau|Ngatpang|Ngchesar|Ngeremlengui|Ngiwal|Palau leliu|Sonsoral|Tobi"],
