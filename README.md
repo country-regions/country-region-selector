@@ -22,11 +22,17 @@ The reason the files are so large is that they contain all the country and regio
 (head/foot).
 - Works with dynamically inserted DOM content.
 
-
 ### Example
 
 Check out the following page for an example of the various ways it can be configured and used.
 [http://benkeen.github.io/country-region-selector/](http://benkeen.github.io/country-region-selector/)
+
+
+### Who maintains the list? 
+
+Me, you - everyone! If you spot anything wonky for a particular country - out of date, incorrect or missing regions,
+I very much welcome pull requests. Just edit the `/source/data.js` file and follow the pattern already in that file and submit
+a pull request. Alternatively, let me know about it by posting an issue.
 
 
 ### How to Use
@@ -111,12 +117,13 @@ familiar with Grunt, here's how you get that hooked up.
 3. In the command line, navigate to to the root of the cloned repo (i.e. the folder with this README file in it).
 4. Type `npm install` to download all necessary require modules.
 5. Type `npm install -g grunt-cli` to install the Grunt command line tool to run properly.
-6. Type `grunt`
+6. Type `grunt generate`
 
-That will then re-generate the minified files in your ./source folder.
+That will then re-generate the minified files in your ./dist folder.
 
 ### Changelog
 
+- `0.1.7` - May 2, 2015. Updated UK counties.
 - `0.1.6` - Apr 10, 2015. Russian regions updated by @Konair0s
 - `0.1.5` - Apr 5, 2015. Bug fix.
 - `0.1.4` - Apr 4, 2015. Lib now wrapped in UMD (accessible with RequireJS, CommonJS, Node); custom init() function exposed
