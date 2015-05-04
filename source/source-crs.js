@@ -1,9 +1,9 @@
 /**
- * country-region-dropdowns
- * ------------------------
+ * country-region-selector
+ * -----------------------
  * <%=__VERSION__%>
  * @author Ben Keen
- * @url https://github.com/benkeen/country-region-dropdowns
+ * @repo https://github.com/benkeen/country-region-selector
  * @licence MIT
  */
 (function(root, factory) {

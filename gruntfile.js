@@ -31,8 +31,16 @@ module.exports = function(grunt) {
 				},
 				options: {
 					report: "min",
-					compress: true
-				}
+					compress: true,
+          banner: "/*!\n" +
+            "* country-region-selector\n" +
+            "* ------------------------\n" +
+            "* " + packageFile.version + "\n" +
+            "* @author Ben Keen\n" +
+            "* @repo https://github.com/benkeen/country-region-selector\n" +
+            "* @licence MIT\n" +
+            "*/\n"
+        }
 			}
 		}
 	};
