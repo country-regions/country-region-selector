@@ -6,7 +6,7 @@
 // first line must be comment
 var _data = [
   ["Afghanistan","AF","Badakhshan~BDS|Badghis~BDG|Baghlan~BGL|Balkh~BAL|Bamyan~BAM|Daykundi~DAY|Farah~FRA|Faryab~FYB|Ghazni~GHA|Ghor~GHO|Helmand~HEL|Herat~HER|Jowzjan~JOW|Kabul~KAB|Kandahar~KAN|Kapisa~KAP|Khost~KHO|Kunar~KNR|Kunduz~KDZ|Laghman~LAG|Logar~LOW|Maidan Wardak~WAR|Nangarhar~NAN|Nimruz~NIM|Nuristan~NUR|Paktia~PIA|Paktika~PKA|Panjshir~PAN|Parwan~PAR|Samangan~SAM|Sar-e Pol~SAR|Takhar~TAK|Urozgan~ORU|Zabul~ZAB"],
-  ["Åland Islands","AX","Brändö|Eckerö|Finström|Föglö|Geta|Hammarland|Jomala|Kumlinge|Kökar|Lemland|Lumparland|Mariehamn|Saltvik|Sottunga|Sund|Vårdö"],
+  ["Åland Islands","AX","Brändö~BR|Eckerö~EC|Finström~FN|Föglö~FG|Geta~GT|Hammarland~HM|Jomala~JM|Kumlinge~KM|Kökar~KK|Lemland~LE|Lumparland~LU|Mariehamn~MH|Saltvik~SV|Sottunga~ST|Sund~SD|Vårdö~VR"],
   ["Albania","AL","Berat|Dibër|Durrës|Elbasan|Fier|Gjirokastër|Korçë|Kukës|Lezhë|Shkodër|Tirana|Vlorë"],
   ["Algeria","DZ","Adrar|Ain Defla|Ain Timouchent|Algiers|Annaba|Batna|Béchar|Béjaïa|Biskra|Blida|Bordj Bou Arréridj|Bouïra|Boumerdes|Chlef|Constantine|Djelfa|El Bayadh|El Taref|El Oued|Illizi|Ghardaia|GuelmaJijel|Khenchela|Laghouat|Mascara|Médéa|Mila|Mostaganem|M'Sila|Naâma|Oran|Ouargla|Oum El Bouaghi|Saïda|Sétif|Sidi Bel Abbès|Skikda|Souk Ahras|Tamanrasset|Tébessa|Tiaret|Tindouf|Tipaza|Tissemsilt|Tizi Ouzou|Tlemcen"],
   ["American Samoa","AS","Tutuila|Aunu'u|Ta'ū|Ofu‑Olosega|Rose Atoll|Swains Island"],
