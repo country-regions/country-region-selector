@@ -253,6 +253,6 @@ var _data = [
   ["Wallis and Futuna","WF","Alo|Sigave|Wallis"],
   ["Western Sahara","EH","Western Sahara"],
   ["Yemen","YE","'Adan|'Ataq|Abyan|Al Bayda'|Al Hudaydah|Al Jawf|Al Mahrah|Al Mahwit|Dhamar|Hadhramawt|Hajjah|Ibb|Lahij|Ma'rib|Sa'dah|San'a'|Ta'izz"],
-  ["Zambia","ZM","Central|Copperbelt|Eastern|Luapula|Lusaka|North-Western|Northern|Southern|Western"],
-  ["Zimbabwe","ZW","Bulawayo|Harare|ManicalandMashonaland Central|Mashonaland East|Mashonaland West|Masvingo|Matabeleland North|Matabeleland South|Midlands"]
+  ["Zambia","ZM","Central~02|Copperbelt~08|Eastern~03|Luapula~04|Lusaka~09|Northern~05|North-Western~06|Southern~07|Western~01"],
+  ["Zimbabwe","ZW","Bulawayo~BU|Harare~HA|Manicaland~MA|Mashonaland Central~MC|Mashonaland East~ME|Mashonaland West~MW|Masvingo~MV|Matabeleland North~MN|Matabeleland South~MS|Midlands~MI"]
 ];
