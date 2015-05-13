@@ -196,7 +196,7 @@ var _data = [
   ["Saint Martin (French part)","MF","Saint Martin"],
   ["Saint Pierre and Miquelon","PM","Miquelon|Saint Pierre"],
   ["Saint Vincent and the Grenadines","VC","Charlotte|Grenadines|Saint Andrew|Saint David|Saint George|Saint Patrick"],
-  ["Samoa","WS","A'ana|Aiga-i-le-Tai|Atua|Fa'asaleleaga|Gaga'emauga|Gagaifomauga|Palauli|Satupa'itea|Tuamasaga|Va'a-o-Fonoti|Vaisigano"],
+  ["Samoa","WS","A'ana~AA|Aiga-i-le-Tai~AL|Atua~AT|Fa'asaleleaga~FA|Gaga'emauga~GE|Gagaifomauga~GI|Palauli~PA|Satupa'itea~SA|Tuamasaga~TU|Va'a-o-Fonoti~VF|Vaisigano~VS"],
   ["San Marino","SM","Acquaviva|Borgo Maggiore|Chiesanuova|Domagnano|Faetano|Fiorentino|Monte Giardino|San Marino|Serravalle"],
   ["Sao Tome and Principe","ST","Principe|Sao Tome"],
   ["Saudi Arabia","SA","'Asir|Al Bahah|Al Hudud ash Shamaliyah|Al Jawf|Al Madinah|Al Qasim|Ar Riyad|Ash Sharqiyah (Eastern Province)|Ha'il|Jizan|Makkah|Najran|Tabuk"],
