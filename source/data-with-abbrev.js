@@ -8,9 +8,9 @@
 // AE AG AI AM AO AQ AR AT AW AZ BA BB BD BE BF BG BH BI BJ BL BM BN BO BQ BS BT
 // BV BW BY BZ CC CD CF CG CH CI CK CL CM CN CO CR CU CV CW CX CY CZ DE DJ DK DM DO EC EE EG
 // ER ES ET FI FJ FK FM FO FR GA GD GE GF GG GH GI GL GM GN GP GQ GR GS GT GU GW GY HK HM HN HR HT
-// HU ID IE IL IM IN IO IQ IR IS IT JE JM JO JP KE KG KH KI KM KN KP KR KW KY KZ LA LB LC LI LK LR LS
+// HU ID IE IL IM IN IO IQ IR IS IT JE JM JO JP KE KG KH KI KM KN KP KR KW KY KZ LB LC LI LK LR LS
 // LT LU LV LY MA MC MD ME MF MG MH MK ML MM MN MO MP MQ MR MS MT MU MV MW MX MY MZ NA NC NE NF NG
-// NL NP NR NU OM PA PE PF PG PH PK PL PM PN PR PS PT PW PY QA RE RO RS RU SA SB SC SD SE
+// NL NP NR NU OM PA PE PF PG PH PK PL PM PN PR PS PT PW PY QA RE RO RU SA SB SC SD SE
 // SH SI SJ SK SL SM SN SO SR SS ST SV SX SY SZ TC TD TF TG TH TJ TK TL TM TN TO TR TT TV TW TZ
 
 // first line must be comment
@@ -136,7 +136,7 @@ var _data = [
   ["Korea, Republic of","KR","Ch'ungch'ong-bukto|Ch'ungch'ong-namdo|Cheju-do|Cholla-bukto|Cholla-namdo|Inch'on-gwangyoksi|Kangwon-do|Kwangju-gwangyoksi|Kyonggi-do|Kyongsang-bukto|Kyongsang-namdo|Pusan-gwangyoksi|Soul-t'ukpyolsi|Taegu-gwangyoksi|Taejon-gwangyoksi|Ulsan-gwangyoksi"],
   ["Kuwait","KW","Al 'Asimah|Al Ahmadi|Al Farwaniyah|Al Jahra'|Hawalli"],
   ["Kyrgyzstan","KG","Batken Oblasty|Bishkek Shaary|Chuy Oblasty (Bishkek)|Jalal-Abad Oblasty|Naryn Oblasty|Osh Oblasty|Talas Oblasty|Ysyk-Kol Oblasty (Karakol)"],
-  ["Lao People's Democratic Republic","LA",""],
+  ["Laos","LA","Vientiane~VT|Attapu!(Attopeu)~AT|Bokèo~BK|Bolikhamxai!(Borikhane)~BL|Champasak!(Champassak)~CH|Houaphan~HO|Khammouan~KH|Louang!Namtha~LM|Louangphabang!(Louang!Prabang)~LP|Oudômxai!(Oudomsai)~OU|Phôngsali!(Phong!Saly)~PH|Salavan!(Saravane)~SL|Savannakhét~SV|Vientiane~VI|Xaignabouli~XA|Xékong!(Sékong)~XE|Xiangkhoang!(Xieng!Khouang)~XI|Xaisômboun~XN"],
   ["Latvia","LV","Aizkraukles Rajons|Aluksnes Rajons|Balvu Rajons|Bauskas Rajons|Cesu Rajons|Daugavpils|Daugavpils Rajons|Dobeles Rajons|Gulbenes Rajons|Jekabpils Rajons|Jelgava|Jelgavas Rajons|Jurmala|Kraslavas Rajons|Kuldigas Rajons|Leipaja|Liepajas Rajons|Limbazu Rajons|Ludzas Rajons|Madonas Rajons|Ogres Rajons|Preilu Rajons|Rezekne|Rezeknes Rajons|Riga|Rigas Rajons|Saldus Rajons|Talsu Rajons|Tukuma Rajons|Valkas Rajons|Valmieras Rajons|Ventspils|Ventspils Rajons"],
   ["Lebanon","LB","Beyrouth|Ech Chimal|Ej Jnoub|El Bekaa|Jabal Loubnane"],
   ["Lesotho","LS","Berea|Butha-Buthe|Leribe|Mafeteng|Maseru|Mohales Hoek|Mokhotlong|Qacha's Nek|Quthing|Thaba-Tseka"],
