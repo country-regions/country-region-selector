@@ -123,6 +123,7 @@ That will then re-generate the minified files in your ./dist folder.
 
 ### Changelog
 
+- `0.1.8` - June 19, 2015. Fix for Norway regions.
 - `0.1.7` - May 2, 2015. Updated UK counties.
 - `0.1.6` - Apr 10, 2015. Russian regions updated by @Konair0s
 - `0.1.5` - Apr 5, 2015. Bug fix.
