@@ -70,6 +70,8 @@ and behaviour.
 
 - `data-region-id` - required. This should contain the ID of the region field that it's being mapped to.
 - `data-default-option` - optional. Default: "Select country". This determines the default, blank option display value.
+- `data-show-default-option` - optional. True by default. This shows the "Select Country" default option (or whatever
+ string you've set). Set it to "false" to turn it off.
 - `data-default-value` - optional. The default selected value in the country dropdown (e.g. "Canada")
 - `data-value="2-char"` - optional. The default behaviour is for the value attributes of the country dropdown options
 to be the full country name. If you'd rather use a 2-char code, add this attribute. Note: the 2-char codes are **mostly**
@@ -80,6 +82,8 @@ ISO standard 2-char country codes, but not all. They are, however, unique across
 "-" character.
 - `data-default-option` - optional. Default: "Select region". This determines the default, blank option display value
 that shows up after a user has selected a country.
+- `data-show-default-option` - optional. True by default. This shows the "Select Region" default option (or whatever
+string you've set). Set it to "false" to turn it off.
 - `data-default-value` - optional. The default selected value in the region dropdown (e.g. "British Columbis")
 
 ### Working with dynamic HTML 
@@ -123,6 +127,7 @@ That will then re-generate the minified files in your ./dist folder.
 
 ### Changelog
 
+- `0.1.9` - Aug 27, 2015. Option added to let you omit default option; NZ regions updated.
 - `0.1.8` - June 19, 2015. Fix for Norway regions.
 - `0.1.7` - May 2, 2015. Updated UK counties.
 - `0.1.6` - Apr 10, 2015. Russian regions updated by @Konair0s

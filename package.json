@@ -1,6 +1,6 @@
 {
   "name": "country-region-dropdowns",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "description": "A simple, configurable JS script that lets you add a country dropdown that automatically updates a corresponding region dropdown in your forms.",
   "main": "dist/crs.min.js",
   "scripts": {

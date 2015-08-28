@@ -19,11 +19,14 @@
     root.crs = factory(root);
   }
 }(this, function() {
+
 	"use strict";
 
 	var _countryClass = "crs-country";
 	var _defaultCountryStr = "Select country";
 	var _defaultRegionStr = "Select region";
+  var _showEmptyCountryOption = true;
+  var _showEmptyRegionOption = true;
 
   // included during grunt build step (run `grunt generate` on the command line)
   //<%=__DATA__%>
@@ -44,18 +47,25 @@
     countryElement.length = 0;
 		var customOptionStr = $(countryElement).attr("data-default-option");
 		var defaultOptionStr = customOptionStr ? customOptionStr : _defaultCountryStr;
+    var showEmptyOption = countryElement.getAttribute("data-show-default-option");
+    _showEmptyCountryOption = (showEmptyOption === null) ? true : (showEmptyOption === "true");
 
 		var defaultSelectedValue = $(countryElement).attr("data-default-value");
 		var customValue = $(countryElement).attr("data-value");
 		var foundIndex = 0;
 
-		this.options[0] = new Option(defaultOptionStr, '');
+    if (_showEmptyCountryOption) {
+      this.options[0] = new Option(defaultOptionStr, '');
+    }
 		for (var i=0; i<_data.length; i++) {
 			var val = (customValue === "2-char") ? _data[i][1] : _data[i][0];
 			countryElement.options[countryElement.length] = new Option(_data[i][0], val);
 
 			if (defaultSelectedValue != null && defaultSelectedValue === val) {
-				foundIndex = i + 1; // needed to offset the default option
+				foundIndex = i;
+        if (_showEmptyCountryOption) {
+          foundIndex++;
+        }
 			}
 		}
 		this.selectedIndex = foundIndex;
@@ -79,7 +89,9 @@
 						var data = _data[countryElement.selectedIndex-1][2].split("|");
 						_setDefaultRegionValue(regionElement, data, defaultRegionSelectedValue);
 					}
-				}
+				} else if (_showEmptyCountryOption === false) {
+          _populateRegionFields(countryElement, regionElement);
+        }
 			} else {
 				console.error("Region dropdown DOM node with ID " + regionID + " not found.");
 			}
@@ -91,9 +103,14 @@
 	var _initRegionField = function(el) {
 		var customOptionStr = $(el).attr("data-blank-option");
 		var defaultOptionStr = customOptionStr ? customOptionStr : "-";
+    var showEmptyOption = el.getAttribute("data-show-default-option");
+    _showEmptyRegionOption = (showEmptyOption === null) ? true : (showEmptyOption === "true");
+
 		el.length = 0;
-		el.options[0] = new Option(defaultOptionStr, "");
-		el.selectedIndex = 0;
+    if (_showEmptyRegionOption) {
+      el.options[0] = new Option(defaultOptionStr, "");
+      el.selectedIndex = 0;
+    }
 	};
 
 	var _setDefaultRegionValue = function(field, data, val) {
@@ -106,7 +123,7 @@
 	};
 
 	var _populateRegionFields = function(countryElement, regionElement) {
-		var selectedCountryIndex = countryElement.selectedIndex-1;
+    var selectedCountryIndex = (_showEmptyCountryOption) ? countryElement.selectedIndex - 1 : countryElement.selectedIndex;
 
 		var customOptionStr = $(regionElement).attr("data-default-option");
 		var defaultOptionStr = customOptionStr ? customOptionStr : _defaultRegionStr;
@@ -115,8 +132,9 @@
 			_initRegionField(regionElement);
 		} else {
 			regionElement.length = 0;
-			regionElement.options[0] = new Option(defaultOptionStr, '');
-
+      if (_showEmptyRegionOption) {
+        regionElement.options[0] = new Option(defaultOptionStr, '');
+      }
 			var regions = _data[selectedCountryIndex][2].split("|");
 			for (var i=0; i<regions.length; i++) {
 				regionElement.options[regionElement.length] = new Option(regions[i], regions[i]);
