@@ -6,8 +6,8 @@ easy to do this, but requires a lot of leg work tracking down the data and hooki
 add this feature to your form without having to write any code.
 
 It comes in two flavours:
-- [standalone script](./source/crs.min.js) (no dependencies, just plain JS) - **54KB** (minified version)
-- a [jQuery-dependent version](./source/crs.min.js) (ever-so slightly smaller) - **53KB** (minified version)
+- [standalone script](https://github.com/benkeen/country-region-selector/tree/master/dist/crs.min.js) (no dependencies, just plain JS) - **54KB** (minified version)
+- a [jQuery-dependent version](https://github.com/benkeen/country-region-selector/tree/master/dist/jquery.crs.min.js) (ever-so slightly smaller) - **53KB** (minified version)
 
 The reason the files are so large is that they contain all the country and region strings.
 
