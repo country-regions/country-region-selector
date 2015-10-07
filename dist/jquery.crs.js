@@ -334,7 +334,7 @@ var _data = [
 				});
 
 				// if the country dropdown has a default value, populate the region field as well
-				if (defaultSelectedValue) {
+				if (defaultSelectedValue && countryElement.selectedIndex > 0) {
 					_populateRegionFields(countryElement, regionElement);
 
 					var defaultRegionSelectedValue = $(regionElement).attr("data-default-value");
