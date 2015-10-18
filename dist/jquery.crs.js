@@ -359,9 +359,10 @@ var _data = [
         _populateRegionFields(countryElement, regionElement);
 
         var defaultRegionSelectedValue = $(regionElement).attr("data-default-value");
+        var useShortcode = (regionElement.getAttribute("data-value") === "shortcode");
         if (defaultRegionSelectedValue !== null) {
-          var data = _data[countryElement.selectedIndex-1][2].split("|");
-          _setDefaultRegionValue(regionElement, data, defaultRegionSelectedValue);
+          var data = _countries[countryElement.selectedIndex-1][3];
+          _setDefaultRegionValue(regionElement, data, defaultRegionSelectedValue, useShortcode);
         }
       } else if (_showEmptyCountryOption === false) {
         _populateRegionFields(countryElement, regionElement);
@@ -423,25 +424,26 @@ var _data = [
       var regions = _countries[i][2].split("|");
       for (var j=0; j<regions.length; j++) {
         var parts = regions[j].split("~");
-        regionData.regions.push([parts[0], parts[1]]); // 2nd index will be undefined for
+        regionData.regions.push([parts[0], parts[1]]); // 2nd index will be undefined for regions that don't have shortcodes
       }
       _countries[i][3] = regionData;
     }
   };
 
-	var _setDefaultRegionValue = function(field, data, val) {
-		for (var i=0; i<data.length; i++) {
-			if (data[i] === val) {
-				field.selectedIndex = i+1;
-				break;
-			}
-		}
-	};
+  var _setDefaultRegionValue = function(field, data, val, useShortcode) {
+    for (var i=0; i<data.regions.length; i++) {
+      var currVal = (useShortcode && data.hasShortcodes && data.regions[i][1]) ? data.regions[i][1] : data.regions[i][0];
+      if (currVal === val) {
+        field.selectedIndex = i+1;
+        break;
+      }
+    }
+  };
 
 	var _populateRegionFields = function(countryElement, regionElement) {
-    var selectedCountryIndex = (_showEmptyCountryOption) ? countryElement.selectedIndex - 1 : countryElement.selectedIndex;
-
+    var selectedCountryIndex = (_showEmptyCountryOption) ? countryElement.selectedIndex-1 : countryElement.selectedIndex;
 		var customOptionStr = $(regionElement).attr("data-default-option");
+    var displayType = regionElement.getAttribute("data-value");
 		var defaultOptionStr = customOptionStr ? customOptionStr : _defaultRegionStr;
 
 		if (countryElement.value === "") {
@@ -451,10 +453,11 @@ var _data = [
       if (_showEmptyRegionOption) {
         regionElement.options[0] = new Option(defaultOptionStr, '');
       }
-			var regions = _countries[selectedCountryIndex][2].split("|");
-			for (var i=0; i<regions.length; i++) {
-				regionElement.options[regionElement.length] = new Option(regions[i], regions[i]);
-			}
+			var regionData = _countries[selectedCountryIndex][3];
+      for (var i=0; i<regionData.regions.length; i++) {
+        var val = (displayType === 'shortcode' && regionData.hasShortcodes) ? regionData.regions[i][1] : regionData.regions[i][0];
+        regionElement.options[regionElement.length] = new Option(regionData.regions[i][0], val);
+      }
 
 			regionElement.selectedIndex = 0;
 		}
