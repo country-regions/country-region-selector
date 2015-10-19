@@ -5,9 +5,9 @@ whatever regions (provinces / states / territories / counties etc.) are appropri
 easy to do this, but requires a lot of leg work tracking down the data and hooking it all up. This script lets you easily
 add this feature to your form without having to write any code.
 
-It comes in two flavours:
-- [standalone script](./source/crs.min.js) (no dependencies, just plain JS) - **54KB** (minified version)
-- a [jQuery-dependent version](./source/crs.min.js) (ever-so slightly smaller) - **53KB** (minified version)
+It comes in two flavours, both about **60KB**.
+- [standalone script](https://github.com/benkeen/country-region-selector/tree/master/dist/crs.min.js) (no dependencies, just plain JS)
+- a [jQuery-dependent version](https://github.com/benkeen/country-region-selector/tree/master/dist/jquery.crs.min.js) (ever-so slightly smaller)
 
 The reason the files are so large is that they contain all the country and region strings.
 
@@ -31,7 +31,7 @@ Check out the following page for an example of the various ways it can be config
 ### Who maintains the list? 
 
 Me, you - everyone! If you spot anything wonky for a particular country - out of date, incorrect or missing regions,
-I very much welcome pull requests. Just edit the `/source/data.js` file and follow the pattern already in that file and submit
+a pull request is very welcome. Just edit the `/source/data.js` file and follow the pattern already in that file and submit
 a pull request. Alternatively, let me know about it by posting an issue.
 
 
@@ -73,9 +73,19 @@ and behaviour.
 - `data-show-default-option` - optional. True by default. This shows the "Select Country" default option (or whatever
  string you've set). Set it to "false" to turn it off.
 - `data-default-value` - optional. The default selected value in the country dropdown (e.g. "Canada")
-- `data-value="2-char"` - optional. The default behaviour is for the value attributes of the country dropdown options
+- `data-value="shortcode"` - optional. The default behaviour is for the value attributes of the country dropdown options
 to be the full country name. If you'd rather use a 2-char code, add this attribute. Note: the 2-char codes are **mostly**
-ISO standard 2-char country codes, but not all. They are, however, unique across the dataset.
+ISO standard 2-char country codes, but not all. They are, however, unique across the dataset. N.B. This setting used 
+to be named `2-char`, but was renamed for consistency with the new region option. For backward compatibility `2-char` 
+still works.
+- `data-whitelist` - optional. A comma-delimited lists of country shortcodes that you want to appear in the dropdown. 
+Anything not specified here will be omitted. Take look here for the country list:
+https://github.com/benkeen/country-region-selector/blob/master/source/data.js - you'll want to use the second index 
+of the array, e.g. "AF" for Afghanistan, or "DE" for Germany.
+- `data-blacklist` - optional. Like the data-whitelist, only a blacklist! This lets you display all countries *except*
+the countries that you specify here. If you supply both white and blacklists, the blacklist setting is ignored. Just enter 
+a comma delimited list of country shortcodes. Again, take look here for the country list + their shortcodes: 
+https://github.com/benkeen/country-region-selector/blob/master/source/data.js
 
 ##### region fields
 - `data-blank-option` - before the user selects a country, there's a single <option> displayed which by default is the
@@ -85,6 +95,12 @@ that shows up after a user has selected a country.
 - `data-show-default-option` - optional. True by default. This shows the "Select Region" default option (or whatever
 string you've set). Set it to "false" to turn it off.
 - `data-default-value` - optional. The default selected value in the region dropdown (e.g. "British Columbis")
+- `data-value="shortcode"` - optional. By default, region dropdowns will display the full region name. This option lets 
+you show a 2-code abbreviation instead. **Please note that all the abbreviations have not yet been added. See
+[this thread](https://github.com/benkeen/country-region-selector/issues/2) that explains how the structure works.** If 
+a region field is set to 2-char and a user user selects a country that doesn't have a region, it will show the full
+country name instead.
+
 
 ### Working with dynamic HTML 
 
@@ -127,6 +143,8 @@ That will then re-generate the minified files in your ./dist folder.
 
 ### Changelog
 
+- `0.2.0` - Oct 18, 2015. `data-whitelist` and `data-blacklist` options added to Country dropdowns. Support for 
+`data-value="shortcode"` option for Regions dropdowns. 
 - `0.1.9` - Aug 27, 2015. Option added to let you omit default option; NZ regions updated.
 - `0.1.8` - June 19, 2015. Fix for Norway regions.
 - `0.1.7` - May 2, 2015. Updated UK counties.
