@@ -31,7 +31,7 @@ module.exports = function(grunt) {
 				},
 				options: {
 					report: "min",
-					compress: true,
+					compress: {},
           mangleProperties: true,
           banner: "/*!\n" +
             "* country-region-selector\n" +
