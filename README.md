@@ -143,6 +143,7 @@ That will then re-generate the minified files in your ./dist folder.
 
 ### Changelog
 
+- `0.2.1` - Oct 20, 2015. Bug fix with Norwegian JS data.
 - `0.2.0` - Oct 18, 2015. `data-whitelist` and `data-blacklist` options added to Country dropdowns. Support for 
 `data-value="shortcode"` option for Regions dropdowns. 
 - `0.1.9` - Aug 27, 2015. Option added to let you omit default option; NZ regions updated.
