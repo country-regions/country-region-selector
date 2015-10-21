@@ -94,7 +94,7 @@ https://github.com/benkeen/country-region-selector/blob/master/source/data.js
 that shows up after a user has selected a country.
 - `data-show-default-option` - optional. True by default. This shows the "Select Region" default option (or whatever
 string you've set). Set it to "false" to turn it off.
-- `data-default-value` - optional. The default selected value in the region dropdown (e.g. "British Columbis")
+- `data-default-value` - optional. The default selected value in the region dropdown (e.g. "British Columbia", or "BC" if using the data-value="shortcode" option)
 - `data-value="shortcode"` - optional. By default, region dropdowns will display the full region name. This option lets 
 you show a 2-code abbreviation instead. **Please note that all the abbreviations have not yet been added. See
 [this thread](https://github.com/benkeen/country-region-selector/issues/2) that explains how the structure works.** If 
