@@ -1,7 +1,7 @@
 /**
  * country-region-selector
  * -----------------------
- * 0.2.1
+ * 0.2.2
  * @author Ben Keen
  * @repo https://github.com/benkeen/country-region-selector
  * @licence MIT
@@ -251,7 +251,7 @@ var _data = [
   ["South Africa","ZA","Eastern Cape~EC|Free State~FS|Gauteng~GT|KwaZulu-Natal~NL|Limpopo~LP|Mpumalanga~MP|Northern~Cape~NC|North West~NW|Western Cape~WC"],
   ["South Georgia and South Sandwich Islands","GS","Bird Island|Bristol Island|Clerke Rocks|Montagu Island|Saunders Island|South Georgia|Southern Thule|Traversay Islands"],
   ["South Sudan","SS","South Sudan"],
-  ["Spain","ES","Andalucía~AN|Aragón~AR|Asturias~AS|Cantabria~CB|Castilla - La Mancha~CM|Castilla y León~CL|Cataluña~CT|Ceuta~CE|Extremadura~EX|Galicia~GA|Baleares (Balearic Islands)~IB|Canarias (Canary Islands)~CN|La Rioja~RI|Madrid~MD|Melilla~ML|Murcia~MC|Navarra~NC|País Vasco (Basque Country)~PV|Valencia~VC"],
+  ["Spain","ES","Albacete~CM|Alicante~VC|Almería~AN|Araba/Álava~VI|Asturias~O|Ávila~AV|Badajoz~BA|Barcelona~B|Bizkaia~BI|Burgos~BU|Cáceres~CC|Cádiz~CA|Cantabria~S|Castellón~CS|Cueta~CU|Ciudad Real~CR|Córdoba~CO|A Coruña~C|Cuenca~CU|Gipuzkoa~SS|Girona~GI|Granada~GR|Guadalajara~GU|Huelva~H|Huesca~HU|Illes Balears~PM|Jaén~J|León~LE|Lleida~L|Lugo~LU|Madrid~M|Málaga~MA|Melilla~ML|Murcia~MU|Navarre~NA|Ourense~OR|Palencia~P|Las Palmas~GC|Pontevedra~PO|La Rioja~LO|Salamanca~SA|Santa Cruz de Tenerife~TF|Segovia~SG|Sevilla~SE|Soria~SO|Tarragona~T|Teruel~TE|Toledo~TO|Valencia~V|Valladolid~VA|Zamora~ZA|Zaragoza~Z"],
   ["Sri Lanka","LK","Central|Eastern|North Central|North Eastern|North Western|Northern|Sabaragamuwa|Southern|Uva|Western"],
   ["Sudan","SD","A'ali an Nil|Al Bahr al Ahmar|Al Buhayrat|Al Jazirah|Al Khartum|Al Qadarif|Al Wahdah|An Nil al Abyad|An Nil al Azraq|Ash Shamaliyah|Bahr al rb al Istiwa'iyah|Gharb Bahr al Ghazal|Gharb Darfur|Gharb Kurdufan|Janub Darfur|Janub Kurdufan|Junqali|Kassala|Nahr an Nil|Shamal Bahr al amal Darfur|Shamal Kurdufan|Sharq al Istiwa'iyah|Sinnar|Warab"],
   ["Suriname","SR","Brokopondo|Commewijne|Coronie|Marowijne|Nickerie|Para|Paramaribo|Saramacca|Sipaliwini|Wanica"],

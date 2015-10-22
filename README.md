@@ -143,6 +143,7 @@ That will then re-generate the minified files in your ./dist folder.
 
 ### Changelog
 
+- `0.2.2` - Oct 22, 2015. Update regions of Spain to match postal regions.
 - `0.2.1` - Oct 20, 2015. Bug fix with Norwegian JS data.
 - `0.2.0` - Oct 18, 2015. `data-whitelist` and `data-blacklist` options added to Country dropdowns. Support for 
 `data-value="shortcode"` option for Regions dropdowns. 
