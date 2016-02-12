@@ -1,15 +1,18 @@
 ## Country-Region-Selector
 
-A common form feature is dynamic, connected country and region dropdowns, where the region field is updated to contain
-whatever regions (provinces / states / territories / counties etc.) are appropriate for the selected country. It's super
-easy to do this, but requires a lot of leg work tracking down the data and hooking it all up. This script lets you easily
+A common feature you see in forms is a connected country and region dropdown, where the region field is updated to 
+show the appropriate list of regions (provinces, states, etc) as the user selects a country. Although it's very
+to code this, it requires a lot of leg work tracking down the data and hooking it all up. This script lets you easily
 add this feature to your form without having to write any code.
 
 It comes in two flavours, both about **60KB**.
 - [standalone script](https://github.com/benkeen/country-region-selector/tree/master/dist/crs.min.js) (no dependencies, just plain JS)
 - a [jQuery-dependent version](https://github.com/benkeen/country-region-selector/tree/master/dist/jquery.crs.min.js) (ever-so slightly smaller)
 
-The reason the files are so large is that they contain all the country and region strings.
+The reason the files are so large is that they contain all the country and region strings. If you know you're only going
+to need a small subset of all countries, you can generate a custom build containing only that info. That will substantially
+reduce the file size. See the Custom Builds section at the bottom of this page.
+
 
 ### Features
 
@@ -31,7 +34,7 @@ Check out the following page for an example of the various ways it can be config
 ### Who maintains the list? 
 
 Me, you - everyone! If you spot anything wonky for a particular country - out of date, incorrect or missing regions,
-a pull request is very welcome. Just edit the `/source/data.js` file and follow the pattern already in that file and submit
+a pull request is very welcome. Just edit the `/source/data.json` file and follow the pattern already in that file and submit
 a pull request. Alternatively, let me know about it by posting an issue.
 
 
@@ -80,12 +83,14 @@ to be named `2-char`, but was renamed for consistency with the new region option
 still works.
 - `data-whitelist` - optional. A comma-delimited lists of country shortcodes that you want to appear in the dropdown. 
 Anything not specified here will be omitted. Take look here for the country list:
-https://github.com/benkeen/country-region-selector/blob/master/source/data.js - you'll want to use the second index 
-of the array, e.g. "AF" for Afghanistan, or "DE" for Germany.
+https://github.com/benkeen/country-region-selector/blob/master/source/data.json - you'll want to use the second index 
+of the array, e.g. "AF" for Afghanistan, or "DE" for Germany. Note: if you're worried about file sizes, you can also 
+choose to generate a custom build of the script that only contains those countries you need. This would replace the 
+need for this option. See the Custom Builds section below.
 - `data-blacklist` - optional. Like the data-whitelist, only a blacklist! This lets you display all countries *except*
 the countries that you specify here. If you supply both white and blacklists, the blacklist setting is ignored. Just enter 
 a comma delimited list of country shortcodes. Again, take look here for the country list + their shortcodes: 
-https://github.com/benkeen/country-region-selector/blob/master/source/data.js
+https://github.com/benkeen/country-region-selector/blob/master/source/data.json
 
 ##### region fields
 - `data-blank-option` - before the user selects a country, there's a single <option> displayed which by default is the
@@ -126,6 +131,19 @@ on your global `window` object. Then you can call `window.crs.init()` whenever y
 inserted. That will initialize the newly inserted country-region fields. 
 
 
+### Custom Builds
+
+As of 0.2.4, you can generate a custom version of the library that contains only those countries you need. This can 
+substantially reduce the overall file size, if that's important to you. 
+ 
+To do this, follow the instructions in the following section to get your dev environment set up, then instead of the 
+last step, run: `grunt customBuild --countries="Canada,United States"`
+
+Just add whatever countries you want to include. To find the exact country names, look at the `source/data.json` file. 
+
+This will generate new files in the `/dist` folder that you can use. 
+
+
 ### Notes for Developers
 
 If you want to edit the source code, go right ahead (pull requests welcome, of course!). The unminified source
@@ -143,6 +161,8 @@ That will then re-generate the minified files in your ./dist folder.
 
 ### Changelog
 
+- `0.2.4` - Feb 11, 2016. South Africa data updated. Custom build option added to let you generate smaller JS files
+containing only the country data you need.
 - `0.2.3` - Feb 11, 2016. Indonesia, Mexico data updated.
 - `0.2.2` - Oct 22, 2015. Update regions of Spain to match postal regions.
 - `0.2.1` - Oct 20, 2015. Bug fix with Norwegian JS data.
