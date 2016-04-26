@@ -5,7 +5,7 @@ module.exports = function(grunt) {
   var _ = require("underscore");
 
   var packageFile = grunt.file.readJSON("package.json");
-  var countriesJSON = grunt.file.readJSON("source/data.json");
+  var countriesJSON = grunt.file.readJSON("node_modules/country-region-data/data.json");
 
 	grunt.loadNpmTasks("grunt-contrib-uglify");
   grunt.loadNpmTasks("grunt-template");
@@ -23,7 +23,9 @@ module.exports = function(grunt) {
 
     var countryData = [];
     var foundCountryNames = [];
-    _.each(countriesJSON.data, function (countryInfo) {
+
+    var formattedData = minifyJSON(countriesJSON);
+    _.each(formattedData, function (countryInfo) {
       var countryName = countryInfo[0];
       if (_.contains(targetCountries, countryName)) {
         countryData.push(countryInfo);
@@ -44,13 +46,39 @@ module.exports = function(grunt) {
   }
 
 
+  // converts the data.json content from the country-region-data
+  function minifyJSON (json) {
+    var js = [];
+
+    json.forEach(function (countryData) {
+      var pairs = [];
+      countryData.regions.forEach(function (info) {
+        if (_.has(info, 'shortCode')) {
+          pairs.push(info.name + '~' + info.shortCode);
+        } else {
+          pairs.push(info.name);
+        }
+      });
+
+      var regionListStr = pairs.join('|');
+      js.push([
+        countryData.countryName,
+        countryData.countryShortCode,
+        regionListStr
+      ]);
+    });
+
+    return js;
+  }
+
+
 	var config = {
     template: {
       generate: {
         options: {
           data: {
             __VERSION__: packageFile.version,
-            __DATA__: "\nvar _data = " + JSON.stringify(countriesJSON.data)
+            __DATA__: "\nvar _data = " + JSON.stringify(minifyJSON(countriesJSON))
           }
         },
         files: {
