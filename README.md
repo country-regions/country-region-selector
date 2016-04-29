@@ -36,9 +36,8 @@ Check out the following page for an example of the various ways it can be config
 ### Who maintains the list? 
 
 Me, you - everyone! If you spot anything wonky for a particular country - out of date, incorrect or missing regions,
-a pull request is very welcome. Just edit the `/source/data.json` file and follow the pattern already in that file and submit
-a pull request. Alternatively, let me know about it by posting an issue.
-
+a pull request is very welcome. As of 0.3.0 the source data is found in a separate repo so it can be used by anyone: 
+https://github.com/benkeen/country-region-data
 
 ### How to Use
 
