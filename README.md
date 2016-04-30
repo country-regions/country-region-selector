@@ -162,6 +162,7 @@ That will then re-generate the minified files in your ./dist folder.
 
 ### Changelog
 
+- `0.3.1` - Apr 30, 2016. Loads of new country shortcodes added - thanks [Ellen Hutchings](http://github.com/ellenhutchings)!
 - `0.3.0` - Apr 28, 2016. Turkey region fix; source data moved to separate repo: https://github.com/benkeen/country-region-data
 - `0.2.4` - Feb 11, 2016. South Africa data updated. Custom build option added to let you generate smaller JS files
 containing only the country data you need.
