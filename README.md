@@ -1,19 +1,20 @@
 ## Country-Region-Selector
 
-A feature you often need in forms is a connected country and region dropdown, where once the user selects a country, 
-the region field gets updated to show the appropriate list of regions (provinces/states/counties etc). It's very easy 
-to code all this, but it's kind of pain having to track down all the raw country-region data.
+A feature you often need in forms is a connected country and region dropdown, where the region field gets automatically 
+updated when the user selects a country. It's very easy to code this of course, but it's a pain having to track down 
+all the raw country-region data.
 
-That's what this script does. It lets you add this feature to your form without having to write any code or spend 
-mind-numbing hours on Wikipedia downloading and formatting the data. I did that. It wasn't pretty.
+This script does all the legwork for you. It lets you add this feature to your form without having to write any code or 
+spend mind-numbing hours on Wikipedia downloading and formatting the data. I did that. It wasn't pretty.
 
-The script comes in two flavours, both about **60KB**.
+The script comes in two flavours:
 - [standalone script](https://github.com/benkeen/country-region-selector/tree/master/dist/crs.min.js) (no dependencies, just plain JS)
-- a [jQuery-dependent version](https://github.com/benkeen/country-region-selector/tree/master/dist/jquery.crs.min.js) (ever-so slightly smaller)
+- a [jQuery-dependent version](https://github.com/benkeen/country-region-selector/tree/master/dist/jquery.crs.min.js) 
+(slightly smaller)
 
-The reason the files are so large is that they contain all the country and region strings. If you know you're only going
-to need a small subset of all countries, you can generate a custom build containing only that info. That will 
-substantially reduce the file size. See the Custom Builds section at the bottom of this page for more info on that.
+The reason the files are so large (60K or more) is that they contain all the country and region strings. If you know 
+you're only going to need a small subset of all countries, you may want to generate a custom build containing only that 
+info. That will substantially reduce the file size. See the Custom Builds section at the bottom of this page for more info.
 
 
 ### Features
@@ -144,6 +145,9 @@ Just add whatever countries you want to include. To find the exact country names
 
 This will generate new files in the `/dist` folder that you can use. 
 
+If the country name you're targeting contains a comma, just escape with with a single backslash, like so: 
+`grunt customBuild --countries="Côte d'Ivoire\, Republic of, Congo\, Republic of the (Brazzaville)"`
+
 
 ### Notes for Developers
 
@@ -162,6 +166,7 @@ That will then re-generate the minified files in your ./dist folder.
 
 ### Changelog
 
+- `0.3.2` - May 15, 2016. More country shortcodes added - thanks [Ellen Hutchings](http://github.com/ellenhutchings)! Bug fixes
 - `0.3.1` - Apr 30, 2016. Loads of new country shortcodes added - thanks [Ellen Hutchings](http://github.com/ellenhutchings)!
 - `0.3.0` - Apr 28, 2016. Turkey region fix; source data moved to separate repo: https://github.com/benkeen/country-region-data
 - `0.2.4` - Feb 11, 2016. South Africa data updated. Custom build option added to let you generate smaller JS files

@@ -19,7 +19,12 @@ module.exports = function(grunt) {
       grunt.fail.fatal("Country list not passed. Example usage: `grunt customBuild --countries=Canada,United States`");
     }
 
-    var targetCountries = countries.split(",");
+    // countries may contain commas in their names. Bit ugly, but simple. This swiches out those escaped commas
+    // and replaces them later
+    var commaReplaced = countries.replace(/\\,/g, '{COMMA}');
+    var targetCountries = _.map(commaReplaced.split(","), function (country) {
+      return country.replace(/\{COMMA\}/, ',').trim();
+    });
 
     var countryData = [];
     var foundCountryNames = [];
@@ -40,9 +45,17 @@ module.exports = function(grunt) {
       _.each(missing, function (countryName) {
         grunt.log.error("--", countryName);
       });
+
+    // all good! Let the user know what bundle is being created, just to remove any ambiguity
+    } else {
+      grunt.log.writeln("");
+      grunt.log.writeln("Creating bundle with following countries:");
+      _.each(targetCountries, function (country) {
+        grunt.log.writeln("* " + country);
+      });
     }
 
-    config.template.customBuild.options.data.__DATA__ = "\nvar _data = " + JSON.stringify(countryData)
+    config.template.customBuild.options.data.__DATA__ = "\nvar _data = " + JSON.stringify(countryData);
   }
 
 
