@@ -166,6 +166,7 @@ That will then re-generate the minified files in your ./dist folder.
 
 ### Changelog
 
+- `0.3.3` - June 7, 2016. Updated country-region-data set. 
 - `0.3.2` - May 15, 2016. More country shortcodes added - thanks [Ellen Hutchings](http://github.com/ellenhutchings)! Bug fixes
 - `0.3.1` - Apr 30, 2016. Loads of new country shortcodes added - thanks [Ellen Hutchings](http://github.com/ellenhutchings)!
 - `0.3.0` - Apr 28, 2016. Turkey region fix; source data moved to separate repo: https://github.com/benkeen/country-region-data
