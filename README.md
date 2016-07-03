@@ -12,6 +12,8 @@ The script comes in two flavours:
 - a [jQuery-dependent version](https://github.com/benkeen/country-region-selector/tree/master/dist/jquery.crs.min.js) 
 (slightly smaller)
 
+There is also a separate React version of the script, [found here](https://github.com/benkeen/react-country-region-selector). 
+
 The reason the files are so large (60K or more) is that they contain all the country and region strings. If you know 
 you're only going to need a small subset of all countries, you may want to generate a custom build containing only that 
 info. That will substantially reduce the file size. See the Custom Builds section at the bottom of this page for more info.
