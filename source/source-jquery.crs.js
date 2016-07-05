@@ -95,9 +95,11 @@
         _populateRegionFields(countryElement, regionElement);
 
         var defaultRegionSelectedValue = $(regionElement).attr("data-default-value");
+
         var useShortcode = (regionElement.getAttribute("data-value") === "shortcode");
         if (defaultRegionSelectedValue !== null) {
-          var data = _countries[countryElement.selectedIndex-1][3];
+          var index = (_showEmptyCountryOption) ? countryElement.selectedIndex - 1 : countryElement.selectedIndex;
+          var data = _countries[index][3];
           _setDefaultRegionValue(regionElement, data, defaultRegionSelectedValue, useShortcode);
         }
       } else if (_showEmptyCountryOption === false) {
@@ -170,7 +172,7 @@
     for (var i=0; i<data.regions.length; i++) {
       var currVal = (useShortcode && data.hasShortcodes && data.regions[i][1]) ? data.regions[i][1] : data.regions[i][0];
       if (currVal === val) {
-        field.selectedIndex = i+1;
+        field.selectedIndex = (_showEmptyRegionOption) ? i + 1 : i;
         break;
       }
     }
