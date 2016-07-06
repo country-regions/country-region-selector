@@ -11,9 +11,12 @@
     // AMD. Register as an anonymous module
     define([], factory);
   } else if (typeof exports === 'object') {
-    // Node. Does not work with strict CommonJS, but only CommonJS-like environments that support module.exports,
-    // like Node
-    module.exports = factory(require());
+    // Add try/catch for CommonJS-like environments that support module.exports
+    try {
+      module.exports = factory(require());
+    } catch (err) {
+      module.exports = factory();
+    }
   } else {
     // browser globals (root is window)
     root.crs = factory(root);
