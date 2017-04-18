@@ -7,12 +7,10 @@ all the raw country-region data.
 This script does all the legwork for you. It lets you add this feature to your form without having to write any code or 
 spend mind-numbing hours on Wikipedia downloading and formatting the data. I did that. It wasn't pretty.
 
-The script comes in two flavours:
+Pick your version:
 - [standalone script](https://github.com/benkeen/country-region-selector/tree/master/dist/crs.min.js) (no dependencies, just plain JS)
-- a [jQuery-dependent version](https://github.com/benkeen/country-region-selector/tree/master/dist/jquery.crs.min.js) 
-(slightly smaller)
-
-There is also a separate React version of the script, [found here](https://github.com/benkeen/react-country-region-selector). 
+- [jQuery-dependent version](https://github.com/benkeen/country-region-selector/tree/master/dist/jquery.crs.min.js) 
+- [React component](https://github.com/benkeen/react-country-region-selector) (separate repo).
 
 The reason the files are so large (60K or more) is that they contain all the country and region strings. If you know 
 you're only going to need a small subset of all countries, you may want to generate a custom build containing only that 
