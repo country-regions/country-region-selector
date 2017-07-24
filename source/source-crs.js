@@ -36,7 +36,9 @@
   //<%=__DATA__%>
 
 	var _init = function() {
-		var countryDropdowns = document.getElementsByClassName(_countryClass);
+    _countries = _data;
+
+    var countryDropdowns = document.getElementsByClassName(_countryClass);
 		for (var i=0; i<countryDropdowns.length; i++) {
 			_populateCountryFields(countryDropdowns[i]);
 		}
@@ -64,13 +66,15 @@
     if (_showEmptyCountryOption) {
       countryElement.options[0] = new Option(defaultOptionStr, '');
     }
-    _initDataSet({
-      whitelist: countryElement.getAttribute("data-whitelist"),
-      blacklist: countryElement.getAttribute("data-blacklist")
-    });
-		for (var i=0; i<_countries.length; i++) {
-			var val = (customValue === "shortcode" || customValue === "2-char") ? _countries[i][1] : _countries[i][0];
-			countryElement.options[countryElement.length] = new Option(_countries[i][0], val);
+
+    // parses the region data into a more manageable format
+    _initRegions();
+
+    var countries = _getCountries(countryElement);
+
+		for (var i=0; i<countries.length; i++) {
+			var val = (customValue === "shortcode" || customValue === "2-char") ? countries[i][1] : countries[i][0];
+			countryElement.options[countryElement.length] = new Option(countries[i][0], val);
 
 			if (defaultSelectedValue != null && defaultSelectedValue === val) {
         foundIndex = i;
@@ -103,7 +107,7 @@
         var useShortcode = (regionElement.getAttribute("data-value") === "shortcode");
         if (defaultRegionSelectedValue !== null) {
           var index = (_showEmptyCountryOption) ? countryElement.selectedIndex - 1 : countryElement.selectedIndex;
-          var data = _countries[index][3];
+          var data = countries[index][3];
           _setDefaultRegionValue(regionElement, data, defaultRegionSelectedValue, useShortcode);
         }
       } else if (_showEmptyCountryOption === false) {
@@ -129,32 +133,29 @@
     }
 	};
 
-  // called on country field initialization. It reduces the subset of countries depending on whether the user
-  // specified a white/blacklist and parses the region list to extract the
-  var _initDataSet = function (params) {
-    var countries = _data;
-    var subset = [], i=0;
+  // called for every component instantiation. Before, this used to construct _countries with the appropriate list
+  // based on whitelist/blacklist, but that causes problems when there are multiple fields some with/without
+  // black/whitelists. Instead, this just memoizes the whitelist/blacklist for quick lookup
+  var _getCountrySubset = function (params) {
+
+    var i=0, countries = [];
     if (params.whitelist) {
       var whitelist = params.whitelist.split(",");
       for (i=0; i<_data.length; i++) {
         if (whitelist.indexOf(_data[i][1]) !== -1) {
-          subset.push(_data[i]);
+          countries.push(_data[i]);
         }
       }
-      countries = subset;
     } else if (params.blacklist) {
       var blacklist = params.blacklist.split(",");
       for (i=0; i<_data.length; i++) {
         if (blacklist.indexOf(_data[i][1]) === -1) {
-          subset.push(_data[i]);
+          countries.push(_data[i]);
         }
       }
-      countries = subset;
     }
-    _countries = countries;
 
-    // now init the regions
-    _initRegions();
+    return countries;
   };
 
   var _initRegions = function () {
@@ -183,7 +184,8 @@
 	};
 
 	var _populateRegionFields = function(countryElement, regionElement) {
-		var selectedCountryIndex = (_showEmptyCountryOption) ? countryElement.selectedIndex-1 : countryElement.selectedIndex;
+		var selectedCountryIndex = (_showEmptyCountryOption) ? countryElement.selectedIndex - 1 : countryElement.selectedIndex;
+
 		var customOptionStr = regionElement.getAttribute("data-default-option");
     var displayType = regionElement.getAttribute("data-value");
 		var defaultOptionStr = customOptionStr ? customOptionStr : _defaultRegionStr;
@@ -195,7 +197,9 @@
       if (_showEmptyRegionOption) {
         regionElement.options[0] = new Option(defaultOptionStr, "");
       }
-			var regionData = _countries[selectedCountryIndex][3];
+
+      var countries = _getCountries(countryElement);
+			var regionData = countries[selectedCountryIndex][3];
 			for (var i=0; i<regionData.regions.length; i++) {
         var val = (displayType === 'shortcode' && regionData.hasShortcodes) ? regionData.regions[i][1] : regionData.regions[i][0];
 				regionElement.options[regionElement.length] = new Option(regionData.regions[i][0], val);
@@ -204,6 +208,18 @@
 		}
 	};
 
+	// returns the list of countries for this instance, taking into account black- and whitelists
+	var _getCountries = function (countryElement) {
+    var whitelist = countryElement.getAttribute("data-whitelist");
+    var blacklist = countryElement.getAttribute("data-blacklist");
+
+    if (!whitelist && !blacklist) {
+      return _countries;
+    }
+
+    // return subset here
+    return _getCountrySubset({ whitelist: whitelist, blacklist: blacklist });
+  };
 
 	/*!
 	 * contentloaded.js
