@@ -31,6 +31,7 @@
   var _showEmptyCountryOption = true;
   var _showEmptyRegionOption = true;
   var _countries = [];
+  var _memoizedIndexes = {};
 
 	// included during grunt build step (run `grunt generate` on the command line)
   //<%=__DATA__%>
@@ -137,22 +138,32 @@
   // based on whitelist/blacklist, but that causes problems when there are multiple fields some with/without
   // black/whitelists. Instead, this just memoizes the whitelist/blacklist for quick lookup
   var _getCountrySubset = function (params) {
+    var key = params.whitelist + "|" + params.blacklist;
+    var i=0;
 
-    var i=0, countries = [];
-    if (params.whitelist) {
-      var whitelist = params.whitelist.split(",");
-      for (i=0; i<_data.length; i++) {
-        if (whitelist.indexOf(_data[i][1]) !== -1) {
-          countries.push(_data[i]);
+    if (!_memoizedIndexes.hasOwnProperty(key)) {
+      _memoizedIndexes[key] = [];
+      if (params.whitelist) {
+        var whitelist = params.whitelist.split(",");
+        for (i=0; i<_data.length; i++) {
+          if (whitelist.indexOf(_data[i][1]) !== -1) {
+            _memoizedIndexes[key].push(i);
+          }
+        }
+      } else if (params.blacklist) {
+        var blacklist = params.blacklist.split(",");
+        for (i=0; i<_data.length; i++) {
+          if (blacklist.indexOf(_data[i][1]) === -1) {
+            _memoizedIndexes[key].push(i);
+          }
         }
       }
-    } else if (params.blacklist) {
-      var blacklist = params.blacklist.split(",");
-      for (i=0; i<_data.length; i++) {
-        if (blacklist.indexOf(_data[i][1]) === -1) {
-          countries.push(_data[i]);
-        }
-      }
+    }
+
+    // now return the data in the memoized indexes
+    var countries = [];
+    for (i=0; i<_memoizedIndexes[key].length; i++) {
+      countries.push(_data[_memoizedIndexes[key][i]]);
     }
 
     return countries;

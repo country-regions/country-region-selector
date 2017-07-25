@@ -167,6 +167,8 @@ That will then re-generate the minified files in your ./dist folder.
 
 ### Changelog
 
+- `0.4.0` - Jul 25, 2017. Bug fix for blacklist/whitelisted fields in page with multiple other country-region-selectors
+not listing the correct regions.
 - `0.3.6` - Oct 31, 2016. Country data updated.
 - `0.3.5` - July 4, 2016. Bug fix #40. Country data updated.
 - `0.3.4` - July 4, 2016. Bug fix #37. Country data updated.
