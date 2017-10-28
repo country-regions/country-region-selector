@@ -85,14 +85,14 @@ to be named `2-char`, but was renamed for consistency with the new region option
 still works.
 - `data-whitelist` - optional. A comma-delimited lists of country shortcodes that you want to appear in the dropdown. 
 Anything not specified here will be omitted. Take look here for the country list:
-https://github.com/benkeen/country-region-selector/blob/master/source/data.json - you'll want to use the second index 
+https://github.com/benkeen/country-region-data/blob/master/data.json - you'll want to use the second index 
 of the array, e.g. "AF" for Afghanistan, or "DE" for Germany. Note: if you're worried about file sizes, you can also 
 choose to generate a custom build of the script that only contains those countries you need. This would replace the 
 need for this option. See the Custom Builds section below.
 - `data-blacklist` - optional. Like the data-whitelist, only a blacklist! This lets you display all countries *except*
 the countries that you specify here. If you supply both white and blacklists, the blacklist setting is ignored. Just enter 
 a comma delimited list of country shortcodes. Again, take look here for the country list + their shortcodes: 
-https://github.com/benkeen/country-region-selector/blob/master/source/data.json
+https://github.com/benkeen/country-region-data/blob/master/data.json
 
 ##### region fields
 - `data-blank-option` - before the user selects a country, there's a single <option> displayed which by default is the
@@ -141,7 +141,7 @@ substantially reduce the overall file size, if that's important to you.
 To do this, follow the instructions in the following section to get your dev environment set up, then instead of the 
 last step, run: `grunt customBuild --countries="Canada,United States"`
 
-Just add whatever countries you want to include. To find the exact country names, look at the `source/data.json` file. 
+Just add whatever countries you want to include. To find the exact country names, take a look at the data in https://github.com/benkeen/country-region-data/blob/master/data.json. 
 
 This will generate new files in the `/dist` folder that you can use. 
 
