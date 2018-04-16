@@ -144,6 +144,18 @@
         <select class="crs-country" data-region-id="nine" data-preferred="CA,US,MX" data-preferred-delim="-----"></select>
         <select id="nine"></select>
 
+        <hr size="1" />
+
+        <h4>Example 10</h4>
+
+        <p>
+            This demos the multiple-select option for the region field. Setting <code>data-default-values</code> to a
+            comma-separated list will pre-select multiple values.
+        </p>
+
+        <select class="crs-country" data-region-id="multi-region" data-default-value='United States'></select>
+        <select id="multi-region" data-value="shortcode" data-default-values='AL,AZ,CA' multiple></select>
+
     </section>
     <script src="dist/crs.min.js"></script>
 
