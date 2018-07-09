@@ -23,9 +23,9 @@
   },
   "devDependencies": {
     "country-region-data": "1.4.4",
-    "grunt": "~0.4.1",
-    "grunt-contrib-uglify": "~0.3.2",
-    "grunt-template": "~0.2.3",
-    "underscore": "^1.8.3"
+    "grunt": "1.0.3",
+    "grunt-contrib-uglify": "~3.3.0",
+    "grunt-template": "1.0.0",
+    "underscore": "1.9.1"
   }
 }
