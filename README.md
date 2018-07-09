@@ -93,6 +93,11 @@ need for this option. See the Custom Builds section below.
 the countries that you specify here. If you supply both white and blacklists, the blacklist setting is ignored. Just enter 
 a comma delimited list of country shortcodes. Again, take look here for the country list + their shortcodes: 
 https://github.com/benkeen/country-region-data/blob/master/data.json
+- `data-preferred` - optional. Lets you target specific countries to get listed at the top of the country dropdown. 
+This should contain a comma-delimited list of the country short codes you want moved, e.g. `data-preferred="CA,US,MX"`.
+- `data-preferred-delim` - optional. If you use the `data-preferred` option, you may want a line separating them from 
+the other countries in the list. This setting lets you provide a string that will act as separator.
+
 
 ##### region fields
 - `data-blank-option` - before the user selects a country, there's a single <option> displayed which by default is the
@@ -167,6 +172,7 @@ That will then re-generate the minified files in your ./dist folder.
 
 ### Changelog
 
+- `0.5.0` - July 8, 2018. Option to list preferred countries at top of countries dropdown added; country data updated. 
 - `0.4.1` - Nov 7, 2017. Country data updated.
 - `0.4.0` - Jul 25, 2017. Bug fix for blacklist/whitelisted fields in page with multiple other country-region-selectors
 not listing the correct regions.

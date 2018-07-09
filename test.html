@@ -1,20 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset='utf-8'>
+    <meta charset="utf-8">
     <title>Country-region-selector</title>
 </head>
 
 <body>
-
-    <!--<div>-->
-        <!--Country:-->
-        <!--<select class="crs-country" data-whitelist="GB,US,CA" data-region-id="one"></select>-->
-    <!--</div>-->
-    <!--<div>-->
-        <!--Region: <select id="one"></select>-->
-    <!--</div>-->
-
 
     <section id="main_content">
         <p>For installation and configuration details about the script, see the <a href="https://github.com/benkeen/country-region-selector">main github readme.</a></p>
@@ -139,6 +130,19 @@
 
         <select class="crs-country" data-region-id="eight"></select>
         <select id="eight" data-value="shortcode"></select>
+
+        <hr size="1" />
+
+        <h4>Example 9</h4>
+
+        <p>
+            This example uses the <code>data-preferred="CA,US..."</code> and <code>data-preferred-delim="-----"</code>
+            options for the country field. It allows you to move preferred countries to appear at the top of
+            the country dropdown. Just enter a comma delimited list of the country short codes.
+        </p>
+
+        <select class="crs-country" data-region-id="nine" data-preferred="CA,US,MX" data-preferred-delim="-----"></select>
+        <select id="nine"></select>
 
     </section>
     <script src="dist/crs.min.js"></script>
