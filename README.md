@@ -8,9 +8,9 @@ This script does all the legwork for you. It lets you add this feature to your f
 spend mind-numbing hours on Wikipedia downloading and formatting the data. I did that. It wasn't pretty.
 
 Pick your version:
-- [standalone script](https://github.com/benkeen/country-region-selector/tree/master/dist/crs.min.js) (no dependencies, just plain JS)
-- [jQuery-dependent version](https://github.com/benkeen/country-region-selector/tree/master/dist/jquery.crs.min.js) 
-- [React component](https://github.com/benkeen/react-country-region-selector) (separate repo).
+- [standalone script](https://github.com/country-regions/country-region-selector/tree/master/dist/crs.min.js) (no dependencies, just plain JS)
+- [jQuery-dependent version](https://github.com/country-regions/country-region-selector/tree/master/dist/jquery.crs.min.js) 
+- [React component](https://github.com/country-regions/react-country-region-selector) (separate repo).
 
 The reason the files are so large (60K or more) is that they contain all the country and region strings. If you know 
 you're only going to need a small subset of all countries, you may want to generate a custom build containing only that 
@@ -31,14 +31,14 @@ info. That will substantially reduce the file size. See the Custom Builds sectio
 ### Example
 
 Check out the following page for an example of the various ways it can be configured and used.
-[http://benkeen.github.io/country-region-selector/](http://benkeen.github.io/country-region-selector/)
+[http://country-regions.github.io/country-region-selector/](http://country-regions.github.io/country-region-selector/)
 
 
 ### Who maintains the list? 
 
 Me, you - everyone! If you spot anything wonky for a particular country - out of date, incorrect or missing regions,
 a pull request is very welcome. As of 0.3.0 the source data is found in a separate repo so it can be used by anyone: 
-https://github.com/benkeen/country-region-data
+https://github.com/country-regions/country-region-data
 
 ### How to Use
 
@@ -85,14 +85,14 @@ to be named `2-char`, but was renamed for consistency with the new region option
 still works.
 - `data-whitelist` - optional. A comma-delimited lists of country shortcodes that you want to appear in the dropdown. 
 Anything not specified here will be omitted. Take look here for the country list:
-https://github.com/benkeen/country-region-data/blob/master/data.json - you'll want to use the second index 
+https://github.com/country-regions/country-region-data/blob/master/data.json - you'll want to use the second index 
 of the array, e.g. "AF" for Afghanistan, or "DE" for Germany. Note: if you're worried about file sizes, you can also 
 choose to generate a custom build of the script that only contains those countries you need. This would replace the 
 need for this option. See the Custom Builds section below.
 - `data-blacklist` - optional. Like the data-whitelist, only a blacklist! This lets you display all countries *except*
 the countries that you specify here. If you supply both white and blacklists, the blacklist setting is ignored. Just enter 
 a comma delimited list of country shortcodes. Again, take look here for the country list + their shortcodes: 
-https://github.com/benkeen/country-region-data/blob/master/data.json
+https://github.com/country-regions/country-region-data/blob/master/data.json
 - `data-preferred` - optional. Lets you target specific countries to get listed at the top of the country dropdown. 
 This should contain a comma-delimited list of the country short codes you want moved, e.g. `data-preferred="CA,US,MX"`.
 - `data-preferred-delim` - optional. If you use the `data-preferred` option, you may want a line separating them from 
@@ -109,7 +109,7 @@ string you've set). Set it to "false" to turn it off.
 - `data-default-value` - optional. The default selected value in the region dropdown (e.g. "British Columbia", or "BC" if using the data-value="shortcode" option)
 - `data-value="shortcode"` - optional. By default, region dropdowns will display the full region name. This option lets 
 you show a 2-code abbreviation instead. **Please note that all the abbreviations have not yet been added. See
-[this thread](https://github.com/benkeen/country-region-selector/issues/2) that explains how the structure works.** If 
+[this thread](https://github.com/country-regions/country-region-selector/issues/2) that explains how the structure works.** If 
 a region field is set to 2-char and a user user selects a country that doesn't have a region, it will show the full
 country name instead.
 
@@ -146,7 +146,7 @@ substantially reduce the overall file size, if that's important to you.
 To do this, follow the instructions in the following section to get your dev environment set up, then instead of the 
 last step, run: `grunt customBuild --countries="Canada,United States"`
 
-Just add whatever countries you want to include. To find the exact country names, take a look at the data in https://github.com/benkeen/country-region-data/blob/master/data.json. 
+Just add whatever countries you want to include. To find the exact country names, take a look at the data in https://github.com/country-regions/country-region-data/blob/master/data.json. 
 
 This will generate new files in the `/dist` folder that you can use. 
 
@@ -182,7 +182,7 @@ not listing the correct regions.
 - `0.3.3` - June 7, 2016. Updated country-region-data set. 
 - `0.3.2` - May 15, 2016. More country shortcodes added - thanks [Ellen Hutchings](http://github.com/ellenhutchings)! Bug fixes
 - `0.3.1` - Apr 30, 2016. Loads of new country shortcodes added - thanks [Ellen Hutchings](http://github.com/ellenhutchings)!
-- `0.3.0` - Apr 28, 2016. Turkey region fix; source data moved to separate repo: https://github.com/benkeen/country-region-data
+- `0.3.0` - Apr 28, 2016. Turkey region fix; source data moved to separate repo: https://github.com/country-regions/country-region-data
 - `0.2.4` - Feb 11, 2016. South Africa data updated. Custom build option added to let you generate smaller JS files
 containing only the country data you need.
 - `0.2.3` - Feb 11, 2016. Indonesia, Mexico data updated.
