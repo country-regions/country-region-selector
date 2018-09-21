@@ -1,4 +1,4 @@
-## Country-Region-Selector
+# Country-Region-Selector
 
 A feature you often need in forms is a connected country and region dropdown, where the region field gets automatically 
 updated when the user selects a country. It's very easy to code this of course, but it's a pain having to track down 
