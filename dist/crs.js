@@ -217,8 +217,17 @@ var _data = [["Afghanistan","AF","Badakhshan~BDS|Badghis~BDG|Baghlan~BGL|Balkh~B
 
             var countries = _getCountries(countryElement);
             var regionData = countries[selectedCountryIndex][3];
+
+            var weWantAndHaveShortCodes = displayType === 'shortcode' && regionData.hasShortcodes
+            var indexToSort = weWantAndHaveShortCodes ? 1 : 0
+            regionData.regions.sort(function(a, b){
+                var x = a[indexToSort].toLowerCase();
+                var y = b[indexToSort].toLowerCase();
+                return x < y ? -1 : x > y ? 1 : 0;
+            });
+
             for (var i = 0; i < regionData.regions.length; i++) {
-                var val = (displayType === 'shortcode' && regionData.hasShortcodes) ? regionData.regions[i][1] : regionData.regions[i][0];
+                var val = weWantAndHaveShortCodes ? regionData.regions[i][1] : regionData.regions[i][0];
                 regionElement.options[regionElement.length] = new Option(regionData.regions[i][0], val);
             }
             regionElement.selectedIndex = 0;
