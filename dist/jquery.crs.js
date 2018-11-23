@@ -207,9 +207,9 @@ var _data = [["Afghanistan","AF","Badakhshan~BDS|Badghis~BDG|Baghlan~BGL|Balkh~B
             }
             var regionData = _countries[selectedCountryIndex][3];
 
-            var weWantAndHaveShortCodes = displayType === 'shortcode' && regionData.hasShortcodes
-            var indexToSort = weWantAndHaveShortCodes ? 1 : 0
-            regionData.regions.sort(function(a, b){
+            var weWantAndHaveShortCodes = displayType === 'shortcode' && regionData.hasShortcodes;
+            var indexToSort = weWantAndHaveShortCodes ? 1 : 0;
+            regionData.regions.sort(function(a, b) {
                 var x = a[indexToSort].toLowerCase();
                 var y = b[indexToSort].toLowerCase();
                 return x < y ? -1 : x > y ? 1 : 0;

@@ -217,9 +217,9 @@
             var countries = _getCountries(countryElement);
             var regionData = countries[selectedCountryIndex][3];
 
-            var weWantAndHaveShortCodes = displayType === 'shortcode' && regionData.hasShortcodes
-            var indexToSort = weWantAndHaveShortCodes ? 1 : 0
-            regionData.regions.sort(function(a, b){
+            var weWantAndHaveShortCodes = displayType === 'shortcode' && regionData.hasShortcodes;
+            var indexToSort = weWantAndHaveShortCodes ? 1 : 0;
+            regionData.regions.sort(function(a, b) {
                 var x = a[indexToSort].toLowerCase();
                 var y = b[indexToSort].toLowerCase();
                 return x < y ? -1 : x > y ? 1 : 0;
