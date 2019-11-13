@@ -1,7 +1,7 @@
 /**
  * country-region-selector
  * -----------------------
- * 0.5.0
+ * 0.5.1
  * @author Ben Keen
  * @repo https://github.com/benkeen/country-region-selector
  * @licence MIT
@@ -40,7 +40,7 @@ var _data = [["Afghanistan","AF","Badakhshan~BDS|Badghis~BDG|Baghlan~BGL|Balkh~B
     var _init = function () {
         _countries = _data;
 
-        var countryDropdowns = document.getElementsByClassName(_countryClass);
+        var countryDropdowns = document.querySelectorAll("select." + _countryClass);
         for (var i = 0; i < countryDropdowns.length; i++) {
             _populateCountryFields(countryDropdowns[i]);
         }
@@ -73,8 +73,6 @@ var _data = [["Afghanistan","AF","Badakhshan~BDS|Badghis~BDG|Baghlan~BGL|Balkh~B
         _initRegions();
 
         var countries = _getCountries(countryElement);
-
-        console.log(customValue);
 
         for (var i = 0; i < countries.length; i++) {
             var val = (customValue === "shortcode" || customValue === "2-char") ? countries[i][1] : countries[i][0];

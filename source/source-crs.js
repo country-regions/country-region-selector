@@ -39,7 +39,7 @@
     var _init = function () {
         _countries = _data;
 
-        var countryDropdowns = document.getElementsByClassName(_countryClass);
+        var countryDropdowns = document.querySelectorAll("select." + _countryClass);
         for (var i = 0; i < countryDropdowns.length; i++) {
             _populateCountryFields(countryDropdowns[i]);
         }

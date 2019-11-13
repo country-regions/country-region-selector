@@ -36,7 +36,7 @@
     //<%=__DATA__%>
 
     var _init = function () {
-        $("." + _countryClass).each(_populateCountryFields);
+        $("select." + _countryClass).each(_populateCountryFields);
     };
 
     var _populateCountryFields = function () {
