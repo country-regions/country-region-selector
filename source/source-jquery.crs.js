@@ -99,7 +99,7 @@
             });
 
             // if the country dropdown has a default value, populate the region field as well
-            if (defaultSelectedValue && countryElement.selectedIndex > 0) {
+            if (defaultSelectedValue && countryElement.selectedIndex >= _showEmptyCountryOption) {
                 _populateRegionFields(countryElement, regionElement);
 
                 var defaultRegionSelectedValue = $(regionElement).attr("data-default-value");
@@ -208,7 +208,7 @@
 
             var weWantAndHaveShortCodes = displayType === 'shortcode' && regionData.hasShortcodes;
             var indexToSort = weWantAndHaveShortCodes ? 1 : 0;
-            regionData.regions.sort(function(a, b) {
+            regionData.regions.sort(function (a, b) {
                 var x = a[indexToSort].toLowerCase();
                 var y = b[indexToSort].toLowerCase();
                 return x < y ? -1 : x > y ? 1 : 0;
@@ -245,7 +245,7 @@
         }
 
         // now prepend the preferred countries
-        for (var i=0; i<preferredShortCodes.length; i++) {
+        for (var i = 0; i < preferredShortCodes.length; i++) {
             var code = preferredShortCodes[i];
             updatedCountries.unshift(preferredMap[code]);
         }

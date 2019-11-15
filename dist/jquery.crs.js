@@ -1,7 +1,7 @@
 /**
  * country-region-selector
  * -----------------------
- * 0.5.0
+ * 0.5.1
  * @author Ben Keen
  * @repo https://github.com/benkeen/country-region-selector
  * @licence MIT
@@ -100,7 +100,7 @@ var _data = [["Afghanistan","AF","Badakhshan~BDS|Badghis~BDG|Baghlan~BGL|Balkh~B
             });
 
             // if the country dropdown has a default value, populate the region field as well
-            if (defaultSelectedValue && countryElement.selectedIndex > 0) {
+            if (defaultSelectedValue && countryElement.selectedIndex >= _showEmptyCountryOption) {
                 _populateRegionFields(countryElement, regionElement);
 
                 var defaultRegionSelectedValue = $(regionElement).attr("data-default-value");
@@ -209,7 +209,7 @@ var _data = [["Afghanistan","AF","Badakhshan~BDS|Badghis~BDG|Baghlan~BGL|Balkh~B
 
             var weWantAndHaveShortCodes = displayType === 'shortcode' && regionData.hasShortcodes;
             var indexToSort = weWantAndHaveShortCodes ? 1 : 0;
-            regionData.regions.sort(function(a, b) {
+            regionData.regions.sort(function (a, b) {
                 var x = a[indexToSort].toLowerCase();
                 var y = b[indexToSort].toLowerCase();
                 return x < y ? -1 : x > y ? 1 : 0;
@@ -246,7 +246,7 @@ var _data = [["Afghanistan","AF","Badakhshan~BDS|Badghis~BDG|Baghlan~BGL|Balkh~B
         }
 
         // now prepend the preferred countries
-        for (var i=0; i<preferredShortCodes.length; i++) {
+        for (var i = 0; i < preferredShortCodes.length; i++) {
             var code = preferredShortCodes[i];
             updatedCountries.unshift(preferredMap[code]);
         }

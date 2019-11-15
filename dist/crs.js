@@ -1,7 +1,7 @@
 /**
  * country-region-selector
  * -----------------------
- * 0.5.0
+ * 0.5.1
  * @author Ben Keen
  * @repo https://github.com/benkeen/country-region-selector
  * @licence MIT
@@ -74,8 +74,6 @@ var _data = [["Afghanistan","AF","Badakhshan~BDS|Badghis~BDG|Baghlan~BGL|Balkh~B
 
         var countries = _getCountries(countryElement);
 
-        console.log(customValue);
-
         for (var i = 0; i < countries.length; i++) {
             var val = (customValue === "shortcode" || customValue === "2-char") ? countries[i][1] : countries[i][0];
 
@@ -109,7 +107,7 @@ var _data = [["Afghanistan","AF","Badakhshan~BDS|Badghis~BDG|Baghlan~BGL|Balkh~B
             };
 
             // if the country dropdown has a default value, populate the region field as well
-            if (defaultSelectedValue !== null && countryElement.selectedIndex > 0) {
+            if (defaultSelectedValue !== null && countryElement.selectedIndex >= _showEmptyCountryOption) {
                 _populateRegionFields(countryElement, regionElement);
 
                 var defaultRegionSelectedValue = regionElement.getAttribute("data-default-value");
