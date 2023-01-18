@@ -172,6 +172,7 @@ That will then re-generate the minified files in your ./dist folder.
 
 ### Changelog
 
+- `1.0.0` - Jan 17, 2023. Removing invalid console.log.
 - `0.5.1` - Nov 22, 2018. Fix for regions not being sorted alphabetically. Thanks, @VincentHokie!
 - `0.5.0` - July 8, 2018. Option to list preferred countries at top of countries dropdown added; country data updated. 
 - `0.4.1` - Nov 7, 2017. Country data updated.

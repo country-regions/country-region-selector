@@ -1,7 +1,7 @@
 /**
  * country-region-selector
  * -----------------------
- * 0.5.0
+ * 1.0.0
  * @author Ben Keen
  * @repo https://github.com/benkeen/country-region-selector
  * @licence MIT
